@@ -2,18 +2,29 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div>
       {/* Hero Section */}
-      <section className="bg-blue-600 text-white py-20">
-        <div className="container mx-auto text-center">
-          <h1 className="text-4xl font-bold mb-4">Welcome to CodeLearn</h1>
-          <p className="text-xl mb-8">
+      <section
+        style={{ background: "#2563eb", color: "#fff", padding: "4rem 0" }}
+      >
+        <div className="container" style={{ textAlign: "center" }}>
+          <h1
+            style={{
+              fontSize: "2.5rem",
+              fontWeight: "bold",
+              marginBottom: "1rem",
+            }}
+          >
+            Welcome to CodeLearn
+          </h1>
+          <p style={{ fontSize: "1.25rem", marginBottom: "2rem" }}>
             Learn web development basics through interactive tutorials and
             quizzes
           </p>
           <Link
             to="/courses"
-            className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100"
+            className="btn"
+            style={{ background: "#fff", color: "#2563eb" }}
           >
             Start Learning Now
           </Link>
@@ -21,12 +32,26 @@ const Home = () => {
       </section>
 
       {/* About Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-8">
+      <section style={{ padding: "3rem 0" }}>
+        <div className="container">
+          <h2
+            style={{
+              fontSize: "2rem",
+              fontWeight: "bold",
+              textAlign: "center",
+              marginBottom: "2rem",
+            }}
+          >
             About CodeLearn
           </h2>
-          <p className="text-lg text-center max-w-2xl mx-auto">
+          <p
+            style={{
+              fontSize: "1.1rem",
+              textAlign: "center",
+              maxWidth: "600px",
+              margin: "0 auto",
+            }}
+          >
             CodeLearn is your gateway to mastering web development. We offer
             beginner-friendly courses in HTML, CSS, JavaScript, and React,
             complete with interactive lessons and quizzes to track your
@@ -36,34 +61,89 @@ const Home = () => {
       </section>
 
       {/* Courses Preview */}
-      <section className="bg-white py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-8">Our Courses</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-gray-100 p-6 rounded-lg text-center">
-              <h3 className="text-xl font-semibold mb-2">HTML Basics</h3>
+      <section style={{ background: "#fff", padding: "3rem 0" }}>
+        <div className="container">
+          <h2
+            style={{
+              fontSize: "2rem",
+              fontWeight: "bold",
+              textAlign: "center",
+              marginBottom: "2rem",
+            }}
+          >
+            Our Courses
+          </h2>
+          <div
+            style={{
+              display: "flex",
+              gap: "1rem",
+              flexWrap: "wrap",
+              justifyContent: "center",
+            }}
+          >
+            <div
+              className="card"
+              style={{ textAlign: "center", minWidth: "200px" }}
+            >
+              <h3
+                style={{
+                  fontSize: "1.2rem",
+                  fontWeight: "bold",
+                  marginBottom: "0.5rem",
+                }}
+              >
+                HTML Basics
+              </h3>
               <p>Learn the foundation of web pages</p>
             </div>
-            <div className="bg-gray-100 p-6 rounded-lg text-center">
-              <h3 className="text-xl font-semibold mb-2">CSS Styling</h3>
+            <div
+              className="card"
+              style={{ textAlign: "center", minWidth: "200px" }}
+            >
+              <h3
+                style={{
+                  fontSize: "1.2rem",
+                  fontWeight: "bold",
+                  marginBottom: "0.5rem",
+                }}
+              >
+                CSS Styling
+              </h3>
               <p>Make your websites beautiful</p>
             </div>
-            <div className="bg-gray-100 p-6 rounded-lg text-center">
-              <h3 className="text-xl font-semibold mb-2">
+            <div
+              className="card"
+              style={{ textAlign: "center", minWidth: "200px" }}
+            >
+              <h3
+                style={{
+                  fontSize: "1.2rem",
+                  fontWeight: "bold",
+                  marginBottom: "0.5rem",
+                }}
+              >
                 JavaScript Fundamentals
               </h3>
               <p>Add interactivity to your sites</p>
             </div>
-            <div className="bg-gray-100 p-6 rounded-lg text-center">
-              <h3 className="text-xl font-semibold mb-2">React Components</h3>
+            <div
+              className="card"
+              style={{ textAlign: "center", minWidth: "200px" }}
+            >
+              <h3
+                style={{
+                  fontSize: "1.2rem",
+                  fontWeight: "bold",
+                  marginBottom: "0.5rem",
+                }}
+              >
+                React Components
+              </h3>
               <p>Build modern web applications</p>
             </div>
           </div>
-          <div className="text-center mt-8">
-            <Link
-              to="/courses"
-              className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700"
-            >
+          <div style={{ textAlign: "center", marginTop: "2rem" }}>
+            <Link to="/courses" className="btn">
               View All Courses
             </Link>
           </div>
@@ -71,23 +151,27 @@ const Home = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-8">Join Our Community</h2>
-          <p className="text-lg mb-8">
+      <section style={{ padding: "3rem 0" }}>
+        <div className="container" style={{ textAlign: "center" }}>
+          <h2
+            style={{
+              fontSize: "2rem",
+              fontWeight: "bold",
+              marginBottom: "2rem",
+            }}
+          >
+            Join Our Community
+          </h2>
+          <p style={{ fontSize: "1.1rem", marginBottom: "2rem" }}>
             Connect with fellow learners and get help when you need it
           </p>
-          <div className="space-x-4">
-            <a
-              href="#"
-              className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700"
-            >
+          <div
+            style={{ display: "flex", gap: "1rem", justifyContent: "center" }}
+          >
+            <a href="#" className="btn">
               Join Discord
             </a>
-            <a
-              href="#"
-              className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700"
-            >
+            <a href="#" className="btn" style={{ background: "#22c55e" }}>
               Contact Us
             </a>
           </div>
