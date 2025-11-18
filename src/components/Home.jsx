@@ -5,7 +5,15 @@ const Home = () => {
     <div>
       {/* Hero Section */}
       <section
-        style={{ background: "#2563eb", color: "#fff", padding: "4rem 0" }}
+        style={{
+          backgroundImage: "url('src/img/college-students.jpg')",
+          color: "#fff",
+          padding: "8rem 0",
+          marginRight: "0.5px",
+          marginLeft: "-8px",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
       >
         <div className="container" style={{ textAlign: "center" }}>
           <h1
