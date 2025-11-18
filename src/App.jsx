@@ -35,18 +35,7 @@ function App() {
     <Router>
       <ErrorBoundary>
         <div className="min-h-screen flex flex-col">
-          <div
-            style={{
-              background: "#fff",
-              color: "#000",
-              padding: "1rem",
-              textAlign: "center",
-              fontWeight: "bold",
-              fontSize: "1.5rem",
-            }}
-          >
-            App Loaded (Fallback)
-          </div>
+          {/* Fallback removed */}
           <Navbar />
           <main className="flex-grow">
             <Routes>
