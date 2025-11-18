@@ -37,6 +37,10 @@ body {
   padding: 1rem;
 }
 
+.logo {
+  display: flex;
+}
+
 .card {
   background: #fff;
   border-radius: 8px;
