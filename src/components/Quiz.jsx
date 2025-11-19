@@ -29,6 +29,31 @@ const Quiz = () => {
         options: ["<p>", "<para>", "<text>", "<pg>"],
         correct: 0,
       },
+      {
+        question: "What is the purpose of the <head> tag in HTML?",
+        options: [
+          "To display the main content",
+          "To contain metadata about the document",
+          "To create a header section",
+          "To define the body",
+        ],
+        correct: 1,
+      },
+      {
+        question: "Which tag is used to create a hyperlink in HTML?",
+        options: ["<link>", "<a>", "<href>", "<url>"],
+        correct: 1,
+      },
+      {
+        question: "What does the <br> tag do?",
+        options: [
+          "Creates a bold text",
+          "Inserts a line break",
+          "Defines a paragraph",
+          "Creates a button",
+        ],
+        correct: 1,
+      },
     ],
     2: [
       // CSS Styling
@@ -46,6 +71,31 @@ const Quiz = () => {
         question: "Which property is used to change the background color?",
         options: ["color", "bgcolor", "background-color", "bg-color"],
         correct: 2,
+      },
+      {
+        question: "How do you select an element with id 'myId' in CSS?",
+        options: ["#myId", ".myId", "myId", "*myId"],
+        correct: 0,
+      },
+      {
+        question: "What is the difference between margin and padding?",
+        options: [
+          "Margin is inside the border, padding is outside",
+          "Padding is inside the border, margin is outside",
+          "They are the same",
+          "Margin affects text, padding affects background",
+        ],
+        correct: 1,
+      },
+      {
+        question: "How do you make text bold in CSS?",
+        options: [
+          "font-weight: bold;",
+          "text-decoration: bold;",
+          "font-style: bold;",
+          "text-weight: bold;",
+        ],
+        correct: 0,
       },
     ],
     3: [
@@ -65,6 +115,31 @@ const Quiz = () => {
         ],
         correct: 0,
       },
+      {
+        question: "What is the output of console.log(typeof null)?",
+        options: ["null", "undefined", "object", "boolean"],
+        correct: 2,
+      },
+      {
+        question: "How do you declare a function in JavaScript?",
+        options: [
+          "function myFunction() {}",
+          "def myFunction() {}",
+          "func myFunction() {}",
+          "method myFunction() {}",
+        ],
+        correct: 0,
+      },
+      {
+        question: "What is an array in JavaScript?",
+        options: [
+          "A single value",
+          "A collection of elements",
+          "A type of loop",
+          "A conditional statement",
+        ],
+        correct: 1,
+      },
     ],
     4: [
       // React Components
@@ -83,6 +158,36 @@ const Quiz = () => {
           "Which hook is used to manage state in functional components?",
         options: ["useEffect", "useState", "useContext", "useReducer"],
         correct: 1,
+      },
+      {
+        question: "What is the purpose of the useEffect hook?",
+        options: [
+          "To manage state",
+          "To handle side effects",
+          "To create components",
+          "To render JSX",
+        ],
+        correct: 1,
+      },
+      {
+        question: "How do you pass props to a component?",
+        options: [
+          "<Component prop={value} />",
+          "<Component value />",
+          "<Component.prop = value />",
+          "<Component setProp(value) />",
+        ],
+        correct: 0,
+      },
+      {
+        question: "What is the difference between state and props?",
+        options: [
+          "State is mutable, props are immutable",
+          "Props are mutable, state is immutable",
+          "They are the same",
+          "State is for styling, props for data",
+        ],
+        correct: 0,
       },
     ],
   };
