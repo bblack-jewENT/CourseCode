@@ -8,9 +8,15 @@ const Navbar = () => {
       </Link>
       <div className="container">
         <div style={{ marginRight: "35px" }}>
-          <Link to="/">Home</Link>
-          <Link to="/courses">Courses</Link>
-          <Link to="/dashboard">Dashboard</Link>
+          <Link className="navbar-link" to="/">
+            Home
+          </Link>
+          <Link className="navbar-link" to="/courses">
+            Courses
+          </Link>
+          <Link className="navbar-link" to="/dashboard">
+            Dashboard
+          </Link>
         </div>
       </div>
     </nav>
