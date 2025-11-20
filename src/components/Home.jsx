@@ -9,6 +9,7 @@ const Home = () => {
           backgroundImage: "url('src/img/college-students.jpg')",
           color: "#fff",
           padding: "8rem 0",
+          marginTop: "1.3rem",
           marginRight: "0.5px",
           marginLeft: "-8px",
           backgroundSize: "cover",
@@ -32,7 +33,6 @@ const Home = () => {
           <Link
             to="/courses"
             className="btn"
-            style={{ background: "#fff", color: "#2563eb" }}
           >
             Start Learning Now
           </Link>
