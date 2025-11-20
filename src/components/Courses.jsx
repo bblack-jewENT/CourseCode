@@ -127,6 +127,7 @@ const Courses = () => {
           style={{
             width: "100%",
             padding: "0.75rem",
+            width: "82.5%",
             border: "1px solid #ccc",
             borderRadius: "8px",
             fontSize: "1rem",
