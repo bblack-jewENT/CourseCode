@@ -37,6 +37,22 @@ body {
   padding: 1rem;
 }
 
+.social-icons {
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 50%;
+  padding: 0.3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.social-icons:hover {
+  transform: scale(1.15);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  background: #eaeaea;
+}
+
 .logo {
   display: flex;
 }
