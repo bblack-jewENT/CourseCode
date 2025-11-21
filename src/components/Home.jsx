@@ -95,7 +95,7 @@ const Home = () => {
       <section
         ref={coursesRef}
         className="animate-on-scroll"
-        style={{ background: "#fff", padding: "3rem 0" }}
+        style={{ background: "#fff", padding: "3rem 0", margin: "8rem 0" }}
       >
         <div className="container">
           <h2
@@ -206,7 +206,11 @@ const Home = () => {
             <a href="#" className="btn">
               Join Discord
             </a>
-            <a href="#" className="btn" style={{ background: "#22c55e" }}>
+            <a
+              href="#"
+              className="contact-btn"
+              style={{ background: "#2a8a4dff" }}
+            >
               Contact Us
             </a>
           </div>

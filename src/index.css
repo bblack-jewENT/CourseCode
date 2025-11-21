@@ -12,8 +12,6 @@ body {
   left: 0;
   width: 100%;
   background: lightblue;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   color: #fff;
   padding: 1rem;
   display: flex;
@@ -22,17 +20,38 @@ body {
   z-index: 1000;
   transition: background 0.3s ease;
 }
+
 .navbar.scrolled {
   background: rgba(0, 0, 0, 0.8);
 }
+
 .navbar a {
   color: #fff;
   text-decoration: none;
   margin: 0 0.5rem;
   font-weight: bold;
+  position: relative;
+  transition: color 0.2s;
 }
-.navbar-link:hover {
-  text-decoration: underline 2px #2563eb;
+
+.navbar a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+}
+
+.navbar a:hover {
+  color: #207985;
+}
+
+.navbar a:hover::after {
+  width: 100%;
 }
 
 .footer {
@@ -78,7 +97,7 @@ body {
 }
 
 .btn {
-  background: #2563eb;
+  background: #207985;
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -89,6 +108,21 @@ body {
 }
 .btn:hover {
   background: #1741a3;
+}
+
+.contact-btn {
+  background: #2a8a4dff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.contact-btn:hover {
+  background: #103527;
 }
 
 .animate-on-scroll {
