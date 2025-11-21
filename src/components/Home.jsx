@@ -85,7 +85,7 @@ const Home = () => {
           >
             CourseCode is your gateway to mastering web development. We offer
             beginner-friendly courses in HTML, CSS, JavaScript, and React,
-            complete with interactive lessons and quizzes to track your
+            complete with interactive lessons, short youtube videos and quizzes to track your
             progress.
           </p>
         </div>
