@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 const Quiz = () => {
   const { courseId, lessonId } = useParams();
+  const navigate = useNavigate();
   const [questions, setQuestions] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
@@ -254,7 +255,6 @@ const Quiz = () => {
       setCurrentQuestion(currentQuestion + 1);
       setSelectedAnswer(null);
     } else {
-      setShowResult(true);
       // Save progress to localStorage
       const progress = JSON.parse(
         localStorage.getItem("codelearn-progress") || "{}"
@@ -266,6 +266,14 @@ const Quiz = () => {
         total: questions.length,
       };
       localStorage.setItem("codelearn-progress", JSON.stringify(progress));
+
+      // Check subscription and redirect premium users to assignments
+      const subscription = localStorage.getItem("subscription") || "free";
+      if (subscription === "premium") {
+        navigate(`/assignments/${courseId}/${lessonId}`);
+      } else {
+        setShowResult(true);
+      }
     }
   };
 

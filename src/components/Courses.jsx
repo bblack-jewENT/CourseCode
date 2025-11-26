@@ -30,17 +30,14 @@ const Courses = () => {
             "Attributes provide additional information about HTML elements.",
         },
       ],
-      assignments:
-        subscription === "premium"
-          ? [
-              {
-                id: 1,
-                title: "Build a Simple Webpage",
-                description:
-                  "Create a basic HTML page with headings, paragraphs, and links.",
-              },
-            ]
-          : [],
+      assignments: [
+        {
+          id: 1,
+          title: "Build a Simple Webpage",
+          description:
+            "Create a basic HTML page with headings, paragraphs, and links.",
+        },
+      ],
     },
     {
       id: 2,
@@ -66,17 +63,13 @@ const Courses = () => {
             "Properties define how the selected elements should be styled.",
         },
       ],
-      assignments:
-        subscription === "premium"
-          ? [
-              {
-                id: 2,
-                title: "Style a Portfolio Page",
-                description:
-                  "Apply CSS to create an attractive portfolio layout.",
-              },
-            ]
-          : [],
+      assignments: [
+        {
+          id: 2,
+          title: "Style a Portfolio Page",
+          description: "Apply CSS to create an attractive portfolio layout.",
+        },
+      ],
     },
     {
       id: 3,
@@ -102,17 +95,13 @@ const Courses = () => {
             "Functions are blocks of code designed to perform a particular task.",
         },
       ],
-      assignments:
-        subscription === "premium"
-          ? [
-              {
-                id: 3,
-                title: "Create Interactive Elements",
-                description:
-                  "Build buttons and forms with JavaScript functionality.",
-              },
-            ]
-          : [],
+      assignments: [
+        {
+          id: 3,
+          title: "Create Interactive Elements",
+          description: "Build buttons and forms with JavaScript functionality.",
+        },
+      ],
     },
     {
       id: 4,
@@ -138,17 +127,14 @@ const Courses = () => {
             "State and props are used to manage data in React components.",
         },
       ],
-      assignments:
-        subscription === "premium"
-          ? [
-              {
-                id: 4,
-                title: "Build a React App",
-                description:
-                  "Create a simple React application with multiple components.",
-              },
-            ]
-          : [],
+      assignments: [
+        {
+          id: 4,
+          title: "Build a React App",
+          description:
+            "Create a simple React application with multiple components.",
+        },
+      ],
     },
     {
       id: 5,

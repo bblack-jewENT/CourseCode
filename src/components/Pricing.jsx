@@ -1,11 +1,9 @@
 import { useState } from "react";
-import { PayPalButtons } from "@paypal/react-paypal-js";
 
 const Pricing = () => {
   const [subscription, setSubscription] = useState(
     localStorage.getItem("subscription") || "free"
   );
-  const [isProcessing, setIsProcessing] = useState(false);
 
   const handleFreeSubscribe = () => {
     localStorage.setItem("subscription", "free");
@@ -13,36 +11,10 @@ const Pricing = () => {
     alert("Switched to Free plan!");
   };
 
-  const createOrder = (data, actions) => {
-    return actions.order.create({
-      purchase_units: [
-        {
-          amount: {
-            value: "9.99",
-          },
-          description: "CourseCode Premium Subscription - Monthly",
-        },
-      ],
-    });
-  };
-
-  const onApprove = (data, actions) => {
-    setIsProcessing(true);
-    return actions.order.capture().then((details) => {
-      // Payment successful
-      localStorage.setItem("subscription", "premium");
-      setSubscription("premium");
-      setIsProcessing(false);
-      alert(
-        `Payment successful! Welcome to Premium plan, ${details.payer.name.given_name}!`
-      );
-    });
-  };
-
-  const onError = (err) => {
-    setIsProcessing(false);
-    console.error("PayPal error:", err);
-    alert("Payment failed. Please try again.");
+  const handlePremiumSubscribe = () => {
+    localStorage.setItem("subscription", "premium");
+    setSubscription("premium");
+    alert("Switched to Premium plan!");
   };
 
   return (
@@ -129,7 +101,7 @@ const Pricing = () => {
             Premium Plan
           </h2>
           <p style={{ fontSize: "2rem", fontWeight: "bold", color: "#2563eb" }}>
-            $9.99/month
+            $0/month
           </p>
           <ul style={{ textAlign: "left", margin: "1rem 0" }}>
             <li>All free features</li>
@@ -138,38 +110,17 @@ const Pricing = () => {
             <li>Advanced courses</li>
             <li>Priority support</li>
           </ul>
-          {subscription === "premium" ? (
-            <button
-              className="btn"
-              disabled
-              style={{
-                background: "#ccc",
-                cursor: "not-allowed",
-              }}
-            >
-              Current Plan
-            </button>
-          ) : (
-            <div style={{ marginTop: "1rem" }}>
-              {isProcessing ? (
-                <div style={{ textAlign: "center", padding: "1rem" }}>
-                  Processing payment...
-                </div>
-              ) : (
-                <PayPalButtons
-                  createOrder={createOrder}
-                  onApprove={onApprove}
-                  onError={onError}
-                  style={{
-                    layout: "vertical",
-                    color: "blue",
-                    shape: "rect",
-                    label: "subscribe",
-                  }}
-                />
-              )}
-            </div>
-          )}
+          <button
+            className="btn"
+            onClick={handlePremiumSubscribe}
+            disabled={subscription === "premium"}
+            style={{
+              background: subscription === "premium" ? "#ccc" : "#2563eb",
+              cursor: subscription === "premium" ? "not-allowed" : "pointer",
+            }}
+          >
+            {subscription === "premium" ? "Current Plan" : "Select Premium"}
+          </button>
         </div>
       </div>
     </div>

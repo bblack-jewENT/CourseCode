@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Courses from "./components/Courses";
 import Quiz from "./components/Quiz";
+import Assignments from "./components/Assignments";
 import Dashboard from "./components/Dashboard";
 import Pricing from "./components/Pricing";
 
@@ -52,6 +53,10 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/courses" element={<Courses />} />
                 <Route path="/quiz/:courseId/:lessonId" element={<Quiz />} />
+                <Route
+                  path="/assignments/:courseId/:lessonId"
+                  element={<Assignments />}
+                />
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/pricing" element={<Pricing />} />
               </Routes>
