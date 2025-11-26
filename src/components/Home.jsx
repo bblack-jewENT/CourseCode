@@ -28,7 +28,7 @@ const Home = () => {
       {/* Hero Section */}
       <section
         style={{
-          backgroundImage: "url('src/img/college-students1.jpg')",
+          backgroundImage: "url('src/img/church-students1.jpeg')",
           color: "#fff",
           padding: "10rem 0",
           marginTop: "1.3rem",
@@ -49,8 +49,8 @@ const Home = () => {
             Welcome to CourseCode
           </h1>
           <p style={{ fontSize: "1.25rem", marginBottom: "2rem" }}>
-            Learn web development basics through interactive tutorials and
-            quizzes
+            Learn web development basics through interactive tutorials, quizzes,
+            and hands-on projects.
           </p>
           <Link to="/courses" className="btn">
             Start Learning Now
@@ -70,7 +70,7 @@ const Home = () => {
               fontSize: "2rem",
               fontWeight: "bold",
               textAlign: "center",
-              marginBottom: "2rem",
+              margin: "2rem 0",
             }}
           >
             About CourseCode
