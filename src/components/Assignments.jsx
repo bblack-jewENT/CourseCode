@@ -296,7 +296,7 @@ const Assignments = () => {
                 href={resource}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ color: "#2563eb", textDecoration: "none" }}
+                style={{ color: "#207985", textDecoration: "none" }}
               >
                 {resource}
               </a>

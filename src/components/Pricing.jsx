@@ -45,7 +45,7 @@ const Pricing = () => {
             minWidth: "300px",
             textAlign: "center",
             border:
-              subscription === "free" ? "2px solid #2563eb" : "1px solid #ccc",
+              subscription === "free" ? "2px solid #207985" : "1px solid #ccc",
           }}
         >
           <h2
@@ -57,7 +57,7 @@ const Pricing = () => {
           >
             Free Plan
           </h2>
-          <p style={{ fontSize: "2rem", fontWeight: "bold", color: "#2563eb" }}>
+          <p style={{ fontSize: "2rem", fontWeight: "bold", color: "#207985" }}>
             $0/month
           </p>
           <ul style={{ textAlign: "left", margin: "1rem 0" }}>
@@ -71,7 +71,7 @@ const Pricing = () => {
             onClick={handleFreeSubscribe}
             disabled={subscription === "free"}
             style={{
-              background: subscription === "free" ? "#ccc" : "#2563eb",
+              background: subscription === "free" ? "#ccc" : "#207985",
               cursor: subscription === "free" ? "not-allowed" : "pointer",
             }}
           >
@@ -87,7 +87,7 @@ const Pricing = () => {
             textAlign: "center",
             border:
               subscription === "premium"
-                ? "2px solid #2563eb"
+                ? "2px solid #207985"
                 : "1px solid #ccc",
           }}
         >
@@ -100,7 +100,7 @@ const Pricing = () => {
           >
             Premium Plan
           </h2>
-          <p style={{ fontSize: "2rem", fontWeight: "bold", color: "#2563eb" }}>
+          <p style={{ fontSize: "2rem", fontWeight: "bold", color: "#207985" }}>
             $0/month
           </p>
           <ul style={{ textAlign: "left", margin: "1rem 0" }}>
@@ -115,7 +115,7 @@ const Pricing = () => {
             onClick={handlePremiumSubscribe}
             disabled={subscription === "premium"}
             style={{
-              background: subscription === "premium" ? "#ccc" : "#2563eb",
+              background: subscription === "premium" ? "#ccc" : "#207985",
               cursor: subscription === "premium" ? "not-allowed" : "pointer",
             }}
           >

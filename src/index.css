@@ -1,8 +1,3 @@
-.avatar,
-.avatar:hover {
-  text-decoration: none !important;
-}
-
 body {
   margin: 0;
   font-family: system-ui, Arial, sans-serif;
@@ -144,11 +139,6 @@ body {
   font-weight: bold;
   cursor: pointer;
   transition: background 0.2s;
-}
-
-.contact-btn:hover {
-  background: #103527;
-  text-decoration: none;
 }
 
 .animate-on-scroll {

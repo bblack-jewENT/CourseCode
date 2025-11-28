@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
+import Contact from "./Contact";
 
 const Home = () => {
   const aboutRef = useRef();
   const coursesRef = useRef();
   const { openAuthModal } = useAuth();
+  const [showContactModal, setShowContactModal] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -208,16 +210,19 @@ const Home = () => {
             <a href="#" className="btn">
               Join Discord
             </a>
-            <a
-              href="#"
+            <button
+              onClick={() => setShowContactModal(true)}
               className="contact-btn"
-              style={{ background: "#2a8a4dff" }}
+              style={{ background: "#125f42ff" }}
             >
               Contact Us
-            </a>
+            </button>
           </div>
         </div>
       </section>
+      {showContactModal && (
+        <Contact onClose={() => setShowContactModal(false)} />
+      )}
     </div>
   );
 };
