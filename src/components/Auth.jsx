@@ -41,7 +41,7 @@ const Auth = () => {
     <div
       style={{
         position: "fixed",
-        top: 0,
+        top: 90,
         left: 0,
         right: 0,
         bottom: 0,
@@ -56,7 +56,7 @@ const Auth = () => {
       <div
         style={{
           backgroundColor: "white",
-          padding: "2rem",
+          padding: "1rem",
           borderRadius: "1rem",
           boxShadow: "0 25px 50px -12px rgba(0,0,0,0.25)",
           width: "100%",
@@ -98,7 +98,11 @@ const Auth = () => {
         )}
         <form
           onSubmit={handleSubmit}
-          style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "1rem",
+          }}
         >
           {isSignUp && (
             <div>
@@ -119,7 +123,7 @@ const Auth = () => {
                 value={formData.username}
                 onChange={handleChange}
                 style={{
-                  width: "100%",
+                  width: "92%",
                   padding: "0.75rem 1rem",
                   border: "1px solid #d1d5db",
                   borderRadius: "0.5rem",
@@ -155,7 +159,7 @@ const Auth = () => {
               value={formData.email}
               onChange={handleChange}
               style={{
-                width: "100%",
+                width: "92%",
                 padding: "0.75rem 1rem",
                 border: "1px solid #d1d5db",
                 borderRadius: "0.5rem",
@@ -189,7 +193,7 @@ const Auth = () => {
               value={formData.password}
               onChange={handleChange}
               style={{
-                width: "100%",
+                width: "92%",
                 padding: "0.75rem 1rem",
                 border: "1px solid #d1d5db",
                 borderRadius: "0.5rem",
@@ -210,7 +214,7 @@ const Auth = () => {
             disabled={loading}
             style={{
               width: "100%",
-              background: "linear-gradient(to right, #3b82f6, #2563eb)",
+              background: "#207985",
               color: "white",
               padding: "0.75rem",
               borderRadius: "0.5rem",
@@ -221,16 +225,8 @@ const Auth = () => {
               transition: "all 0.2s",
               boxShadow: "0 10px 15px -3px rgba(0,0,0,0.1)",
             }}
-            onMouseOver={(e) =>
-              !loading &&
-              (e.target.style.background =
-                "linear-gradient(to right, #2563eb, #1d4ed8)")
-            }
-            onMouseOut={(e) =>
-              !loading &&
-              (e.target.style.background =
-                "linear-gradient(to right, #3b82f6, #2563eb)")
-            }
+            onMouseOver={(e) => (e.target.style.background = "#1741a3")}
+            onMouseOut={(e) => (e.target.style.background = "#207985")}
           >
             {loading ? (
               <div

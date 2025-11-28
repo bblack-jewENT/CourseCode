@@ -118,8 +118,14 @@ body {
   cursor: pointer;
   transition: background 0.2s;
 }
+
 .btn:hover {
   background: #1741a3;
+  text-decoration: none;
+}
+
+.create-acc-btn:hover {
+  background: linear-gradient(to right, #86a3e0ff, #1d4ed8);
   text-decoration: none;
 }
 
