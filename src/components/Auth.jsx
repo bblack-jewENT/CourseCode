@@ -38,27 +38,79 @@ const Auth = () => {
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
-      <div className="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md border border-gray-200">
-        <div className="text-center mb-6">
-          <h2 className="text-3xl font-bold text-gray-800 mb-2">
+    <div
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundColor: "rgba(0,0,0,0.6)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        zIndex: 50,
+        padding: "1rem",
+      }}
+    >
+      <div
+        style={{
+          backgroundColor: "white",
+          padding: "2rem",
+          borderRadius: "1rem",
+          boxShadow: "0 25px 50px -12px rgba(0,0,0,0.25)",
+          width: "100%",
+          maxWidth: "28rem",
+          border: "1px solid #e5e7eb",
+          position: "relative",
+        }}
+      >
+        <div style={{ textAlign: "center", marginBottom: "1.5rem" }}>
+          <h2
+            style={{
+              fontSize: "1.875rem",
+              fontWeight: "bold",
+              color: "#1f2937",
+              marginBottom: "0.5rem",
+            }}
+          >
             {isSignUp ? "Create Account" : "Welcome Back"}
           </h2>
-          <p className="text-gray-600">
+          <p style={{ color: "#6b7280" }}>
             {isSignUp
               ? "Join CourseCode to start learning"
               : "Sign in to your account"}
           </p>
         </div>
         {error && (
-          <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-4">
+          <div
+            style={{
+              backgroundColor: "#fef2f2",
+              border: "1px solid #fecaca",
+              color: "#b91c1c",
+              padding: "1rem",
+              borderRadius: "0.5rem",
+              marginBottom: "1rem",
+            }}
+          >
             {error}
           </div>
         )}
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form
+          onSubmit={handleSubmit}
+          style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
+        >
           {isSignUp && (
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label
+                style={{
+                  display: "block",
+                  fontSize: "0.875rem",
+                  fontWeight: "500",
+                  color: "#374151",
+                  marginBottom: "0.25rem",
+                }}
+              >
                 Username
               </label>
               <input
@@ -66,14 +118,35 @@ const Auth = () => {
                 name="username"
                 value={formData.username}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                style={{
+                  width: "100%",
+                  padding: "0.75rem 1rem",
+                  border: "1px solid #d1d5db",
+                  borderRadius: "0.5rem",
+                  outline: "none",
+                  transition:
+                    "border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out",
+                }}
                 placeholder="Enter your username"
                 required
+                onFocus={(e) =>
+                  (e.target.style.boxShadow =
+                    "0 0 0 3px rgba(59, 130, 246, 0.1)")
+                }
+                onBlur={(e) => (e.target.style.boxShadow = "none")}
               />
             </div>
           )}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label
+              style={{
+                display: "block",
+                fontSize: "0.875rem",
+                fontWeight: "500",
+                color: "#374151",
+                marginBottom: "0.25rem",
+              }}
+            >
               Email Address
             </label>
             <input
@@ -81,13 +154,33 @@ const Auth = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+              style={{
+                width: "100%",
+                padding: "0.75rem 1rem",
+                border: "1px solid #d1d5db",
+                borderRadius: "0.5rem",
+                outline: "none",
+                transition:
+                  "border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out",
+              }}
               placeholder="Enter your email"
               required
+              onFocus={(e) =>
+                (e.target.style.boxShadow = "0 0 0 3px rgba(59, 130, 246, 0.1)")
+              }
+              onBlur={(e) => (e.target.style.boxShadow = "none")}
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label
+              style={{
+                display: "block",
+                fontSize: "0.875rem",
+                fontWeight: "500",
+                color: "#374151",
+                marginBottom: "0.25rem",
+              }}
+            >
               Password
             </label>
             <input
@@ -95,19 +188,69 @@ const Auth = () => {
               name="password"
               value={formData.password}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+              style={{
+                width: "100%",
+                padding: "0.75rem 1rem",
+                border: "1px solid #d1d5db",
+                borderRadius: "0.5rem",
+                outline: "none",
+                transition:
+                  "border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out",
+              }}
               placeholder="Enter your password"
               required
+              onFocus={(e) =>
+                (e.target.style.boxShadow = "0 0 0 3px rgba(59, 130, 246, 0.1)")
+              }
+              onBlur={(e) => (e.target.style.boxShadow = "none")}
             />
           </div>
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 rounded-lg font-semibold hover:from-blue-600 hover:to-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-lg"
+            style={{
+              width: "100%",
+              background: "linear-gradient(to right, #3b82f6, #2563eb)",
+              color: "white",
+              padding: "0.75rem",
+              borderRadius: "0.5rem",
+              fontWeight: "600",
+              border: "none",
+              cursor: loading ? "not-allowed" : "pointer",
+              opacity: loading ? 0.5 : 1,
+              transition: "all 0.2s",
+              boxShadow: "0 10px 15px -3px rgba(0,0,0,0.1)",
+            }}
+            onMouseOver={(e) =>
+              !loading &&
+              (e.target.style.background =
+                "linear-gradient(to right, #2563eb, #1d4ed8)")
+            }
+            onMouseOut={(e) =>
+              !loading &&
+              (e.target.style.background =
+                "linear-gradient(to right, #3b82f6, #2563eb)")
+            }
           >
             {loading ? (
-              <div className="flex items-center justify-center">
-                <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <div
+                  style={{
+                    height: "1.25rem",
+                    width: "1.25rem",
+                    border: "2px solid transparent",
+                    borderTop: "2px solid white",
+                    borderRadius: "50%",
+                    animation: "spin 1s linear infinite",
+                    marginRight: "0.5rem",
+                  }}
+                ></div>
                 {isSignUp ? "Creating Account..." : "Signing In..."}
               </div>
             ) : isSignUp ? (
@@ -117,12 +260,21 @@ const Auth = () => {
             )}
           </button>
         </form>
-        <div className="mt-6 text-center">
-          <p className="text-gray-600">
+        <div style={{ marginTop: "1.5rem", textAlign: "center" }}>
+          <p style={{ color: "#6b7280" }}>
             {isSignUp ? "Already have an account?" : "Don't have an account?"}
             <button
               onClick={() => setIsSignUp(!isSignUp)}
-              className="text-blue-600 hover:text-blue-800 font-medium ml-1 transition-colors"
+              style={{
+                color: "#2563eb",
+                fontWeight: "500",
+                marginLeft: "0.25rem",
+                border: "none",
+                background: "none",
+                cursor: "pointer",
+              }}
+              onMouseOver={(e) => (e.target.style.color = "#1d4ed8")}
+              onMouseOut={(e) => (e.target.style.color = "#2563eb")}
             >
               {isSignUp ? "Sign In" : "Sign Up"}
             </button>
@@ -130,7 +282,19 @@ const Auth = () => {
         </div>
         <button
           onClick={closeAuthModal}
-          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl font-light transition-colors"
+          style={{
+            position: "absolute",
+            top: "1rem",
+            right: "1rem",
+            color: "#9ca3af",
+            fontSize: "1.5rem",
+            fontWeight: "300",
+            border: "none",
+            background: "none",
+            cursor: "pointer",
+          }}
+          onMouseOver={(e) => (e.target.style.color = "#6b7280")}
+          onMouseOut={(e) => (e.target.style.color = "#9ca3af")}
         >
           ×
         </button>

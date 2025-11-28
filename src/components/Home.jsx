@@ -54,9 +54,9 @@ const Home = () => {
             Learn web development basics through interactive tutorials, quizzes,
             and hands-on projects.
           </p>
-          <button onClick={openAuthModal} className="btn">
-            Sign Up Now
-          </button>
+          <Link to="/courses" className="btn">
+            Start Learning Now
+          </Link>
         </div>
       </section>
 
