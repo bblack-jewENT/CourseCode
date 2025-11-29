@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { submitContactForm } from "../services/firebase";
 
 const Contact = ({ onClose }) => {
   const [formData, setFormData] = useState({
@@ -20,17 +21,28 @@ const Contact = ({ onClose }) => {
     e.preventDefault();
     setLoading(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      console.log("Contact form submitted:", formData);
-      setSubmitted(true);
-      setLoading(false);
-      setTimeout(() => {
-        onClose();
+    try {
+      const result = await submitContactForm(formData);
+      if (result.success) {
+        setSubmitted(true);
+        setTimeout(() => {
+          onClose();
+          setSubmitted(false);
+          setFormData({ name: "", email: "", message: "" });
+        }, 2000);
+      } else {
         setSubmitted(false);
+        setLoading(false);
         setFormData({ name: "", email: "", message: "" });
-      }, 2000);
-    }, 1000);
+        alert("Failed to submit form. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setSubmitted(false);
+      setLoading(false);
+      setFormData({ name: "", email: "", message: "" });
+      alert("An error occurred. Please try again.");
+    }
   };
 
   return (

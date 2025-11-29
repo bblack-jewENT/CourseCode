@@ -35,7 +35,7 @@ const Home = () => {
           backgroundImage: "url('src/img/church-students1.jpeg')",
           color: "#fff",
           padding: "10rem 0",
-          marginTop: "1.3rem",
+          marginTop: "0.8rem",
           marginRight: "0.5px",
           marginLeft: "-8px",
           backgroundSize: "cover",
@@ -89,8 +89,9 @@ const Home = () => {
           >
             CourseCode is your gateway to mastering web development. We offer
             beginner-friendly courses in HTML, CSS, JavaScript, and React,
-            complete with interactive lessons, short youtube videos and quizzes
-            to track your progress.
+            complete with interactive lessons, short videos and quizzes to track
+            your progress. Here at CourseCode we thrive at building a supportive
+            community of learners. Join us today and start your coding journey!
           </p>
         </div>
       </section>
