@@ -1,10 +1,12 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 const Assignments = () => {
   const { courseId, lessonId } = useParams();
   const [url, setUrl] = useState("");
-  const subscription = localStorage.getItem("subscription") || "free";
+  const subscriptionRaw = localStorage.getItem("subscription") || "free";
+  const subscription = String(subscriptionRaw).toLowerCase();
+  const isPremium = subscription === "premium";
 
   const assignments = {
     1: {
@@ -207,18 +209,410 @@ const Assignments = () => {
         ],
       },
     },
+    5: {
+      1: {
+        title: "Build a Modern CSS Grid Dashboard",
+        description:
+          "Create a responsive dashboard layout using CSS Grid with multiple widget areas and adaptive sizing.",
+        tasks: [
+          "Design a dashboard with header, sidebar, main content, and footer areas",
+          "Implement CSS Grid with named grid areas",
+          "Create responsive breakpoints for mobile, tablet, and desktop",
+          "Add hover effects and smooth transitions",
+          "Ensure accessibility with proper semantic HTML",
+        ],
+        resources: [
+          "CSS Grid Layout: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout",
+          "Responsive Design: https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design",
+        ],
+      },
+      2: {
+        title: "Create a Flexbox Navigation System",
+        description:
+          "Build a complex navigation system using Flexbox with dropdowns, mobile hamburger menu, and smooth animations.",
+        tasks: [
+          "Implement horizontal navigation with Flexbox",
+          "Add dropdown menus with CSS-only interactions",
+          "Create mobile-responsive hamburger menu",
+          "Add smooth transitions and hover effects",
+          "Ensure keyboard navigation accessibility",
+        ],
+        resources: [
+          "Flexbox Guide: https://css-tricks.com/snippets/css/a-guide-to-flexbox/",
+          "CSS Animations: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations",
+        ],
+      },
+      3: {
+        title: "Design a CSS Custom Property Theme System",
+        description:
+          "Create a comprehensive theme system using CSS custom properties (variables) for dark/light mode switching.",
+        tasks: [
+          "Set up CSS custom properties for colors, spacing, and typography",
+          "Create light and dark theme variations",
+          "Implement theme switching with JavaScript",
+          "Add smooth transitions between themes",
+          "Ensure all components respect the theme system",
+        ],
+        resources: [
+          "CSS Custom Properties: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties",
+          "CSS Transitions: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions",
+        ],
+      },
+    },
+    6: {
+      1: {
+        title: "Build a Modern ES6+ Todo Application",
+        description:
+          "Create an advanced todo application using modern JavaScript features including classes, modules, and async/await.",
+        tasks: [
+          "Use ES6+ features: arrow functions, destructuring, spread operator",
+          "Implement classes for task management",
+          "Add local storage with async/await patterns",
+          "Create module system for code organization",
+          "Add error handling with try/catch blocks",
+        ],
+        resources: [
+          "ES6 Features: https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript",
+          "Async/Await: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await",
+        ],
+      },
+      2: {
+        title: "Create an Interactive Data Visualization",
+        description:
+          "Build an interactive data visualization tool using modern JavaScript and the Canvas API.",
+        tasks: [
+          "Fetch and process data using fetch API and async/await",
+          "Implement interactive charts using Canvas or SVG",
+          "Add filtering and sorting functionality",
+          "Use ES6+ array methods for data manipulation",
+          "Create responsive design for different screen sizes",
+        ],
+        resources: [
+          "Canvas API: https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API",
+          "Fetch API: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API",
+        ],
+      },
+      3: {
+        title: "Build a Real-time Chat Application",
+        description:
+          "Create a real-time chat application using modern JavaScript with WebSocket simulation and local state management.",
+        tasks: [
+          "Implement WebSocket connection simulation",
+          "Use React-like state management patterns",
+          "Add message timestamps and user identification",
+          "Implement typing indicators and message status",
+          "Create message history and search functionality",
+        ],
+        resources: [
+          "WebSockets: https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API",
+          "Local Storage: https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage",
+        ],
+      },
+    },
+    7: {
+      1: {
+        title: "Build a Performance-Optimized React Component Library",
+        description:
+          "Create a set of reusable React components with performance optimizations including memoization and code splitting.",
+        tasks: [
+          "Build components using React.memo and useMemo",
+          "Implement code splitting with React.lazy and Suspense",
+          "Create custom hooks for common functionality",
+          "Add PropTypes for type checking",
+          "Optimize re-renders with useCallback",
+        ],
+        resources: [
+          "React Performance: https://react.dev/learn/render-and-commit",
+          "Code Splitting: https://react.dev/reference/react/lazy",
+        ],
+      },
+      2: {
+        title: "Create a React Context Provider System",
+        description:
+          "Build a comprehensive context system for global state management with multiple providers and custom hooks.",
+        tasks: [
+          "Create multiple context providers for different concerns",
+          "Implement custom hooks for context consumption",
+          "Add context value optimization to prevent unnecessary renders",
+          "Create a theme provider with dark/light mode switching",
+          "Implement user authentication context",
+        ],
+        resources: [
+          "React Context: https://react.dev/reference/react/Context",
+          "Custom Hooks: https://react.dev/reference/react",
+        ],
+      },
+      3: {
+        title: "Build an Advanced React Form with Validation",
+        description:
+          "Create a complex form system with real-time validation, custom hooks, and dynamic field generation.",
+        tasks: [
+          "Build reusable form components with controlled inputs",
+          "Implement form validation using custom hooks",
+          "Add async validation with debouncing",
+          "Create dynamic form field generation from schema",
+          "Implement form submission with loading and error states",
+        ],
+        resources: [
+          "React Forms: https://react.dev/reference/react-dom/components/form",
+          "Custom Hooks: https://react.dev/learn/reusing-logic-with-custom-hooks",
+        ],
+      },
+    },
+    8: {
+      1: {
+        title: "Build a RESTful API with Node.js and Express",
+        description:
+          "Create a complete REST API with user authentication, data validation, and proper error handling.",
+        tasks: [
+          "Set up Express server with middleware configuration",
+          "Implement JWT-based authentication system",
+          "Create CRUD operations with data validation",
+          "Add proper error handling and logging",
+          "Implement rate limiting and security headers",
+        ],
+        resources: [
+          "Express.js: https://expressjs.com/",
+          "JWT Authentication: https://jwt.io/",
+        ],
+      },
+      2: {
+        title: "Create a Real-time Notification System",
+        description:
+          "Build a notification system using WebSocket connections with message queuing and delivery confirmation.",
+        tasks: [
+          "Implement WebSocket server with connection management",
+          "Create message queuing system for offline users",
+          "Add delivery confirmation and read receipts",
+          "Implement notification categories and filtering",
+          "Add real-time typing indicators and presence",
+        ],
+        resources: [
+          "Socket.io: https://socket.io/",
+          "WebSocket API: https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API",
+        ],
+      },
+      3: {
+        title: "Build a Microservices Architecture Demo",
+        description:
+          "Create a microservices application with multiple services, API gateway, and service communication.",
+        tasks: [
+          "Design microservices architecture with clear boundaries",
+          "Implement API gateway for request routing",
+          "Add inter-service communication using HTTP/REST",
+          "Create service discovery and health checking",
+          "Implement distributed logging and monitoring",
+        ],
+        resources: [
+          "Microservices: https://microservices.io/",
+          "API Gateway: https://aws.amazon.com/api-gateway/",
+        ],
+      },
+    },
+    9: {
+      1: {
+        title: "Design and Implement a Complete Database Schema",
+        description:
+          "Create a normalized database schema for an e-commerce system with proper relationships and constraints.",
+        tasks: [
+          "Design entity-relationship diagram for e-commerce domain",
+          "Implement database normalization (1NF, 2NF, 3NF)",
+          "Create SQL DDL scripts for schema creation",
+          "Add indexes for performance optimization",
+          "Implement database triggers and stored procedures",
+        ],
+        resources: [
+          "Database Normalization: https://en.wikipedia.org/wiki/Database_normalization",
+          "SQL Tutorial: https://www.w3schools.com/sql/",
+        ],
+      },
+      2: {
+        title: "Build a Multi-Database Application",
+        description:
+          "Create an application that uses both SQL and NoSQL databases for different data storage needs.",
+        tasks: [
+          "Design data partitioning strategy across databases",
+          "Implement PostgreSQL for relational data",
+          "Add MongoDB for document storage",
+          "Create data synchronization between databases",
+          "Implement backup and recovery procedures",
+        ],
+        resources: [
+          "PostgreSQL: https://www.postgresql.org/docs/",
+          "MongoDB: https://docs.mongodb.com/",
+        ],
+      },
+      3: {
+        title: "Create a Data Analytics Dashboard",
+        description:
+          "Build a real-time analytics dashboard with database optimization for large datasets and complex queries.",
+        tasks: [
+          "Design database schema for analytics data",
+          "Implement data aggregation and ETL processes",
+          "Create efficient queries with proper indexing",
+          "Add real-time data streaming capabilities",
+          "Build visualization components for analytics",
+        ],
+        resources: [
+          "Data Warehousing: https://en.wikipedia.org/wiki/Data_warehouse",
+          "ETL Processes: https://en.wikipedia.org/wiki/Extract,_transform,_load",
+        ],
+      },
+    },
+    10: {
+      1: {
+        title: "Build a Secure Authentication System",
+        description:
+          "Create a comprehensive authentication system with multiple security layers, password policies, and session management.",
+        tasks: [
+          "Implement secure password hashing with salt",
+          "Add multi-factor authentication (2FA)",
+          "Create session management with secure tokens",
+          "Implement account lockout and rate limiting",
+          "Add security headers and CSRF protection",
+        ],
+        resources: [
+          "Password Security: https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html",
+          "OWASP Security: https://owasp.org/www-project-top-ten/",
+        ],
+      },
+      2: {
+        title: "Create a Security Audit Tool",
+        description:
+          "Build a tool that scans web applications for common security vulnerabilities and provides remediation recommendations.",
+        tasks: [
+          "Implement SQL injection detection",
+          "Add XSS vulnerability scanning",
+          "Create security header analysis",
+          "Implement file upload security checks",
+          "Generate comprehensive security reports",
+        ],
+        resources: [
+          "OWASP Testing Guide: https://owasp.org/www-project-web-security-testing-guide/",
+          "Security Headers: https://securityheaders.com/",
+        ],
+      },
+      3: {
+        title: "Build an Encrypted Communication System",
+        description:
+          "Create a secure messaging system with end-to-end encryption using modern cryptographic techniques.",
+        tasks: [
+          "Implement public-key cryptography for key exchange",
+          "Add message encryption and decryption",
+          "Create secure key management system",
+          "Implement forward secrecy and perfect secrecy",
+          "Add secure message storage and transmission",
+        ],
+        resources: [
+          "Cryptography: https://en.wikipedia.org/wiki/Cryptography",
+          "Public-key Cryptography: https://en.wikipedia.org/wiki/Public-key_cryptography",
+        ],
+      },
+    },
   };
 
-  const assignment = assignments[courseId]?.[lessonId];
+  const assignment = assignments[Number(courseId)]?.[Number(lessonId)];
 
-  if (!assignment || (subscription === "free" && courseId !== "1")) {
+  // Debugging info to help identify why assignments may not render
+  console.log("Assignments debug:", {
+    courseId,
+    lessonId,
+    courseIdNum: Number(courseId),
+    lessonIdNum: Number(lessonId),
+    subscriptionRaw,
+    subscription,
+    isPremium,
+    assignmentExists: !!assignments[Number(courseId)]?.[Number(lessonId)],
+  });
+
+  // Show message for free users if accessing advanced lessons (courseId >= 5)
+  if (!isPremium && Number(courseId) >= 5) {
+    return (
+      <div className="container">
+        <h1>Premium Feature</h1>
+        <p>
+          Assignments for advanced web development lessons are only available
+          for Premium subscribers.
+          <br />
+          Upgrade to Premium to access all advanced assignments and features.
+        </p>
+        <button
+          className="btn"
+          onClick={() => (window.location.href = "/pricing")}
+          style={{ marginTop: "1rem" }}
+        >
+          Upgrade to Premium
+        </button>
+      </div>
+    );
+  }
+
+  // Show message if assignment data is missing
+  if (!assignment) {
+    const courseAssignments = assignments[Number(courseId)] || {};
+    const available = Object.keys(courseAssignments || {}).map((id) => ({
+      id,
+      title: courseAssignments[id].title,
+    }));
+
+    if (isPremium) {
+      return (
+        <div className="container">
+          <h1>Assignment Not Created</h1>
+          <p>
+            The specific assignment for this lesson hasn't been created yet.
+            Below are the available assignments for this course — you can select
+            one, or report the missing assignment to the team.
+          </p>
+
+          {available.length > 0 ? (
+            <div className="card" style={{ marginTop: "1rem" }}>
+              <h2 style={{ fontSize: "1.25rem", fontWeight: "600" }}>
+                Available Assignments
+              </h2>
+              <ul style={{ paddingLeft: "1.5rem" }}>
+                {available.map((a) => (
+                  <li key={a.id} style={{ marginBottom: "0.5rem" }}>
+                    <Link
+                      to={`/assignments/${courseId}/${a.id}`}
+                      style={{ color: "#207985", textDecoration: "none" }}
+                    >
+                      {a.title} (Lesson {a.id})
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : (
+            <p style={{ marginTop: "1rem" }}>
+              No assignments exist for this course yet.
+            </p>
+          )}
+
+          <div style={{ marginTop: "1.5rem" }}>
+            <button
+              className="btn"
+              onClick={() =>
+                window.open(
+                  "mailto:hello@coursecode.example?subject=Missing%20Assignment&body=Please%20create%20assignment%20for%20course%20" +
+                    courseId +
+                    "%20lesson%20" +
+                    lessonId
+                )
+              }
+            >
+              Report Missing Assignment
+            </button>
+          </div>
+        </div>
+      );
+    }
+
     return (
       <div className="container">
         <h1>Assignment Not Available</h1>
         <p>
-          {subscription === "free"
-            ? "Assignments are only available for HTML lessons on the free plan. Upgrade to Premium to access all assignments."
-            : "The assignment for this lesson is not available yet."}
+          The assignment for this lesson is not available yet or is incomplete.
         </p>
       </div>
     );
