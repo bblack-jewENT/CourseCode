@@ -11,90 +11,346 @@ const Quiz = () => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [answers, setAnswers] = useState([]);
 
-  // Mock lesson data
+  // Mock lesson data with enhanced content
   const lessonData = {
     1: {
       title: "HTML Basics",
       history: () => (
-        <div
-          dangerouslySetInnerHTML={{
-            __html: `
-            <h2>Introduction to HTML</h2>
-            <h3>A bit of history…</h3>
-            <ul>
-              <li>The world wide web began as a way to share documents on the internet (which was starting to gain a foothold with other functionality like email & newsgroups).</li>
-              <li>It was introduced in 1990 by English physicist Tim Berners-Lee and Belgian computer scientist Robert Cailliau while both were working at CERN.</li>
-            </ul>
-            <h3>HyperText Markup Language</h3>
-            <ul>
-              <li>Initially, the documents that were shared on the WWW were text documents that were "marked-up" with extra tags to define the structural or visual aspects of the document.</li>
-              <li>Another effect of this language was to add extra functionality into the document, such as links to other online pages, creating a network of interconnected documents (this is the "hypertext" portion of the html name).</li>
-            </ul>
-            <h3>Fast-forward to now…</h3>
-            <ul>
-              <li>As computer technology and the WWW have evolved, html has continued to allow the content of web pages to evolve.</li>
-              <li>Aside from just links, we now enjoy multimedia content and applications that are seamlessly integrated into dynamic web pages, allowing the WWW to do much more than facilitate the sharing of documents.</li>
-            </ul>
-            <h3>Overview of HTML</h3>
-            <ul>
-              <li>Files have the .html or .htm extension.</li>
-              <li>Files can be composed in ordinary text editors.</li>
-              <li>Subsets of the text can be enclosed in "tags" to give that portion of text some structure or functionality: <tag>blahblahblah</tag></li>
-              <li>Tags have the general form: <tagname attribute1="value1" attribute2="value2"></li>
-            </ul>
-            <h3>An Example</h3>
-            <p>The following code:</p>
-            <pre><code><html>
-            <title>Example</title>
-            &lt;body&gt;
-            Hello World
-            &lt;/body&gt;
-            </code></pre>
-            <p>Would look like: Hello World</p>
-            <h3>Some Formatting Tags</h3>
-            <ul>
-              <li>&lt;p&gt;, &lt;/p&gt; - start and end of a paragraph</li>
-              <li>&lt;b&gt;, &lt;/b&gt; - start and end of bold text</li>
-              <li>&lt;i&gt;, &lt;/i&gt; - start and end of italicized text</li>
-              <li>&lt;u&gt;, &lt;/u&gt; - start and end of underlined text</li>
-              <li>&lt;br&gt; - insert a line break to override the default behavior of just wrapping the text around to the next line.</li>
-            </ul>
-            <h3>Some More Formatting Tags</h3>
-            <ul>
-              <li>&lt;h1&gt; , /h1&gt; - set enclosed text to be a "Level 1 heading" (also &lt;h2&gt;, &lt;h3&gt;, etc.)</li>
-              <li>&lt;font&gt; , &lt;/font&gt; - set font for enclosed text with style options set in tag. i.e. - &lt;font face = "Arial" color = "blue" size = "10"&gt;blahblahblah&lt;/font&gt;</li>
-              <li>Note: web browsers ignore all but the first space between pieces of text, and any line breaks in your .html file. It is the tags you include which determine how the page will look, not the way it looks in your text editor.</li>
-            </ul>
-          `,
-          }}
-        />
+        <div className="lesson-history">
+          <div className="timeline-item animate-on-scroll">
+            <h3>🎯 The Birth of the Web (1989-1991)</h3>
+            <p>
+              Picture this: You're Tim Berners-Lee, working at CERN in
+              Switzerland. You've got this crazy idea to connect all the
+              research documents together using "hyperlinks" - links that jump
+              between documents. Sound familiar? That's exactly how the World
+              Wide Web was born!
+            </p>
+            <div className="fun-fact">
+              <strong>🎪 Fun Fact:</strong> The first website ever created was
+              about the World Wide Web project itself! You can still view it at
+              the World Wide Web Consortium's website.
+            </div>
+          </div>
+
+          <div className="timeline-item animate-on-scroll">
+            <h3>🏷️ HTML Gets Tagged (1991-1993)</h3>
+            <p>
+              HTML was initially called "SGML for the web" - but that was way
+              too complicated! So Tim simplified it into a "markup language" -
+              basically adding special tags around text to give it structure and
+              meaning.
+            </p>
+            <div className="code-example">
+              <pre>
+                <code>
+                  &lt;h1&gt;This is a heading&lt;/h1&gt; &lt;p&gt;This is a
+                  paragraph&lt;/p&gt;
+                </code>
+              </pre>
+            </div>
+          </div>
+
+          <div className="timeline-item animate-on-scroll">
+            <h3>🌟 The Browser Wars Begin (1993-1995)</h3>
+            <p>
+              Suddenly, everyone wanted to create browsers! Mosaic, Netscape
+              Navigator, Internet Explorer - each trying to "interpret" HTML
+              their own way. This led to the infamous "Browser Wars" where
+              developers had to write different code for different browsers!
+            </p>
+            <div className="historical-note">
+              <strong>📰 Historical Note:</strong> In 1995, both Netscape
+              Navigator and Internet Explorer had different implementations of
+              the same HTML tags - developers had to choose which browser to
+              "break"!
+            </div>
+          </div>
+
+          <div className="timeline-item animate-on-scroll">
+            <h3>🚀 Modern HTML (1997-Present)</h3>
+            <p>
+              HTML has evolved from just basic text structure to supporting
+              multimedia, animations, forms, and much more. Today's HTML5 can
+              handle everything from simple text to complex web applications!
+            </p>
+          </div>
+        </div>
       ),
       overview:
-        "In this lesson, we'll explore the fundamentals of HTML including tags, elements, attributes, and document structure. The quiz will test your understanding of common HTML tags, their purposes, and how they work together to create web pages.",
+        "In this lesson, we'll explore the fundamentals of HTML including tags, elements, attributes, and document structure. We'll take a journey through the history of the web and learn how HTML became the backbone of the internet!",
       videoId: "UB1O30fR-EE",
     },
     2: {
       title: "CSS Styling",
-      history:
-        "CSS was first proposed by Håkon Wium Lie in 1994 while working with Tim Berners-Lee at CERN. The first CSS specification became a W3C recommendation in 1996. CSS has evolved through multiple versions, with CSS3 introducing advanced features like animations, transitions, and responsive design capabilities.",
+      history: () => (
+        <div className="lesson-history">
+          <div className="timeline-item animate-on-scroll">
+            <h3>🎨 The Style Crisis of the 90s</h3>
+            <p>
+              Imagine being a web designer in 1995. You had HTML for structure,
+              but every single piece of styling had to be done with HTML tags.
+              Want a red text? You'd use <code>&lt;font color="red"&gt;</code>.
+              Wanted bold text? <code>&lt;b&gt;</code>! This was a designer's
+              nightmare!
+            </p>
+            <div className="code-nightmare">
+              <pre>
+                <code>
+                  &lt;font face="Arial" size="12" color="blue"&gt;
+                  &lt;b&gt;Styled Text&lt;/b&gt; &lt;/font&gt;
+                </code>
+              </pre>
+              <p className="caption">😱 This was actual web design in 1995!</p>
+            </div>
+          </div>
+
+          <div className="timeline-item animate-on-scroll">
+            <h3>🧙‍♂️ Håkon's Magic Solution (1994)</h3>
+            <p>
+              Enter Håkon Wium Lie, a Norwegian computer scientist who had this
+              radical idea: "What if we separated content from design?" While
+              working with Tim Berners-Lee at CERN, he proposed "Cascading Style
+              Sheets" - a way to keep HTML clean and handle all styling
+              separately.
+            </p>
+            <div className="innovation-highlight">
+              <strong>💡 The Lightbulb Moment:</strong> Håkon realized that web
+              pages could maintain the same HTML structure but look completely
+              different through CSS - just like how a newspaper can be printed
+              in black & white or full color!
+            </div>
+          </div>
+
+          <div className="timeline-item animate-on-scroll">
+            <h3>🔥 Browser Support Drama (1996-2000)</h3>
+            <p>
+              CSS Level 1 became official in 1996, but browsers were sloooow to
+              support it. Internet Explorer 3 had "partial" CSS support that was
+              mostly broken! Web developers had to create CSS that worked AND
+              create HTML fallbacks for older browsers.
+            </p>
+            <div className="browser-war">
+              <div className="browser-icon">IE3</div>
+              <span>vs</span>
+              <div className="browser-icon">CSS</div>
+              <span>Result:</span>
+              <div className="loser">😵 Nightmare Mode Activated</div>
+            </div>
+          </div>
+
+          <div className="timeline-item animate-on-scroll">
+            <h3>🎯 CSS Gets Super Powers (2000-2010)</h3>
+            <p>
+              CSS2 in 1998 added positioning and media types. But the real
+              game-changer? CSS3 (starting 1999) brought us animations,
+              transitions, gradients, and flexbox. Suddenly, web designers could
+              create animations without JavaScript!
+            </p>
+            <div className="evolution-demo">
+              <div className="css-box">Basic</div>
+              <div className="css-box animated">With Animations!</div>
+            </div>
+          </div>
+        </div>
+      ),
       overview:
-        "This lesson covers CSS syntax, selectors, properties, and the box model. You'll learn how to style HTML elements and create visually appealing web pages. The quiz will focus on CSS selectors, properties, and common styling techniques.",
+        "This lesson covers CSS syntax, selectors, properties, and the box model. You'll discover how CSS saved web design from the chaos of HTML styling tags and learn to create beautiful, responsive websites.",
       videoId: "yfoY53QXEnI",
     },
     3: {
       title: "JavaScript Fundamentals",
-      history:
-        "JavaScript was created by Brendan Eich in 1995 while working at Netscape Communications. Originally called Mocha, then LiveScript, it was renamed JavaScript to capitalize on Java's popularity. ECMAScript, the standardized version, was first released in 1997 and continues to evolve with annual updates.",
+      history: () => (
+        <div className="lesson-history">
+          <div className="timeline-item animate-on-scroll">
+            <h3>⚡ The 10-Day Miracle (1995)</h3>
+            <p>
+              Brendan Eich at Netscape had just 10 days to create a programming
+              language for the web. He was like, "I'll create something that
+              looks like Java but runs in the browser!" - and thus, JavaScript
+              was born in a caffeine-fueled coding marathon!
+            </p>
+            <div className="timeline-wow">
+              <strong>🤯 Mind = Blown:</strong> JavaScript was created in about
+              10 days, yet it's still powering most of the web today!
+            </div>
+          </div>
+
+          <div className="timeline-item animate-on-scroll">
+            <h3>🎭 The Name Game (Mocha → LiveScript → JavaScript)</h3>
+            <p>
+              First it was called "Mocha," then "LiveScript," but then Netscape
+              made a deal with Sun Microsystems. Sun said, "Hey, we have this
+              popular language called Java. Why don't you rename it to
+              JavaScript?" - even though they're completely different languages!
+            </p>
+            <div className="confusion-note">
+              <div className="lang-comparison">
+                <div className="lang-box">
+                  <h4>Java</h4>
+                  <code>public static void main(String[] args) {"{"}</code>
+                </div>
+                <div className="vs">VS</div>
+                <div className="lang-box">
+                  <h4>JavaScript</h4>
+                  <code>
+                    function main() {"{"} console.log("Hi!"); {"}"}
+                  </code>
+                </div>
+              </div>
+              <p className="caption">
+                Same family name, totally different languages! 😄
+              </p>
+            </div>
+          </div>
+
+          <div className="timeline-item animate-on-scroll">
+            <h3>🏛️ The Standards Game (1997)</h3>
+            <p>
+              After Microsoft created their own version called "JScript,"
+              everyone realized they needed to standardize. So they created
+              ECMAScript - the official standard for JavaScript. Think of
+              ECMAScript as the "recipe" and JavaScript as the "dish" different
+              companies serve!
+            </p>
+            <div className="standardization-demo">
+              <div className="recipe-box">
+                <h4>📋 ECMAScript Standard</h4>
+                <p>The official recipe</p>
+              </div>
+              <div className="chef-box">
+                <h4>👨‍🍳 JavaScript Implementation</h4>
+                <p>How each browser "cooks" it</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="timeline-item animate-on-scroll">
+            <h3>🚀 The Renaissance (2005-Present)</h3>
+            <p>
+              From being just "that thing that makes popups," JavaScript
+              exploded into everything: Ajax made websites feel instant, Node.js
+              brought JavaScript to servers, and modern frameworks like React,
+              Vue, and Angular created entire ecosystems!
+            </p>
+            <div className="evolution-showcase">
+              <div className="evolution-stage">
+                <span className="stage">1.0</span>
+                <span>Popups & Alerts</span>
+              </div>
+              <div className="evolution-stage">
+                <span className="stage">2.0</span>
+                <span>AJAX & Dynamic Content</span>
+              </div>
+              <div className="evolution-stage">
+                <span className="stage">3.0</span>
+                <span>Node.js & Server-Side</span>
+              </div>
+              <div className="evolution-stage">
+                <span className="stage">4.0</span>
+                <span>Frameworks & Apps</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      ),
       overview:
-        "We'll cover JavaScript basics including variables, data types, functions, and control structures. The quiz will test your knowledge of JavaScript syntax, data types, functions, and basic programming concepts.",
+        "We'll cover JavaScript basics including variables, data types, functions, and control structures. Discover the fascinating story of how a 10-day creation became the backbone of modern web development!",
       videoId: "W6NZfCO5SIk",
     },
     4: {
       title: "React Components",
-      history:
-        "React was created by Facebook (now Meta) in 2013 and open-sourced later that year. Developed by Jordan Walke, it was initially used internally at Facebook before becoming one of the most popular JavaScript libraries. React introduced component-based architecture and revolutionized frontend development.",
+      history: () => (
+        <div className="lesson-history">
+          <div className="timeline-item animate-on-scroll">
+            <h3>😱 The Facebook Problem (2011-2013)</h3>
+            <p>
+              Imagine managing Facebook's news feed - millions of users,
+              constantly updating content, and you need to re-render everything
+              efficiently. Traditional DOM manipulation was getting sloooow and
+              complex. Something had to change!
+            </p>
+            <div className="problem-demo">
+              <div className="dom-comparison">
+                <div className="old-way">
+                  <h4>🚫 The Old Way</h4>
+                  <p>Manipulate DOM directly = Slow & Messy</p>
+                </div>
+                <div className="new-way">
+                  <h4>✨ React Way</h4>
+                  <p>Describe what you want = Fast & Clean</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="timeline-item animate-on-scroll">
+            <h3>🎭 The Component Revelation (2013)</h3>
+            <p>
+              Jordan Walke at Facebook had an epiphany: "What if we broke down
+              UI into tiny, reusable pieces?" - like LEGO blocks! Each component
+              would be independent, reusable, and easy to test. This was
+              revolutionary!
+            </p>
+            <div className="lego-analogy">
+              <div className="lego-piece">Header</div>
+              <div className="lego-piece">Button</div>
+              <div className="lego-piece">Card</div>
+              <div className="lego-piece">Footer</div>
+              <p className="caption">Build websites like LEGO! 🧱</p>
+            </div>
+          </div>
+
+          <div className="timeline-item animate-on-scroll">
+            <h3>🔮 The Virtual DOM Magic</h3>
+            <p>
+              React introduced the Virtual DOM - basically a "practice version"
+              of the real DOM. When data changes, React first updates the
+              Virtual DOM, compares it with the previous version, and only
+              updates what's actually changed on the real page. It's like a
+              smart assistant who only does the necessary work!
+            </p>
+            <div className="virtual-dom-demo">
+              <div className="dom-layer">
+                <span className="label">Virtual DOM (Fast Updates!)</span>
+                <div className="virtual-content">
+                  <div className="content-box">User Name</div>
+                  <div className="content-box">Like Count</div>
+                </div>
+              </div>
+              <div className="arrow">⚡</div>
+              <div className="dom-layer">
+                <span className="label">Real DOM (Minimal Changes!)</span>
+                <div className="real-content">
+                  <div className="content-box updated">John Doe</div>
+                  <div className="content-box">42 Likes</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="timeline-item animate-on-scroll">
+            <h3>🌟 The Revolution Spreads (2013-Present)</h3>
+            <p>
+              Once React proved its worth at Facebook and Instagram, other
+              companies started adopting it. Airbnb, Netflix, Uber - everyone
+              wanted to be "React-friendly." Now React is everywhere, from
+              simple websites to complex mobile apps!
+            </p>
+            <div className="adoption-timeline">
+              <div className="adoption-point">2013: React Created</div>
+              <div className="adoption-point">2014: Instagram Acquired</div>
+              <div className="adoption-point">2015: React Native Launched</div>
+              <div className="adoption-point">
+                2020: Hooks Revolutionized State
+              </div>
+              <div className="adoption-point">Today: React Everywhere! 🌍</div>
+            </div>
+          </div>
+        </div>
+      ),
       overview:
-        "This lesson introduces React concepts including components, JSX, props, state, and hooks. The quiz will cover React fundamentals, component lifecycle, state management, and common React patterns.",
+        "This lesson introduces React concepts including components, JSX, props, state, and hooks. Discover how Facebook's solution to complex UIs became the most popular frontend library in the world!",
       videoId: "Ke90Tje7VS0",
     },
   };
@@ -337,6 +593,25 @@ const Quiz = () => {
     setAnswers(new Array(questions.length).fill(null));
   };
 
+  useEffect(() => {
+    // Add scroll animation when lessons are displayed
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const animatedElements = document.querySelectorAll(".animate-on-scroll");
+    animatedElements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, [showQuiz]);
+
   if (!showQuiz) {
     const lesson = lessonData[courseId];
     if (!lesson) {
@@ -345,19 +620,57 @@ const Quiz = () => {
     return (
       <div className="container" style={{ maxWidth: "800px" }}>
         <h1
-          style={{ fontSize: "2rem", fontWeight: "bold", marginBottom: "2rem" }}
+          style={{
+            fontSize: "2rem",
+            fontWeight: "bold",
+            marginBottom: "2rem",
+            textAlign: "center",
+            background: "linear-gradient(135deg, #207985, #1d4ed8)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            animation: "fadeInUp 0.8s ease-out",
+          }}
         >
           {lesson.title}
         </h1>
+
+        {lesson.image && (
+          <div
+            className="lesson-hero-image"
+            style={{
+              marginBottom: "2rem",
+              textAlign: "center",
+            }}
+          >
+            <img
+              src={lesson.image}
+              alt={`${lesson.title} illustration`}
+              style={{
+                maxWidth: "100%",
+                height: "200px",
+                objectFit: "cover",
+                borderRadius: "12px",
+                boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+                transition: "transform 0.3s ease",
+              }}
+              onMouseOver={(e) => (e.target.style.transform = "scale(1.05)")}
+              onMouseOut={(e) => (e.target.style.transform = "scale(1)")}
+            />
+          </div>
+        )}
+
         <div className="card" style={{ marginBottom: "2rem" }}>
           <h2
             style={{
               fontSize: "1.5rem",
               fontWeight: "bold",
               marginBottom: "1rem",
+              display: "flex",
+              alignItems: "center",
+              gap: "0.5rem",
             }}
           >
-            History
+            📚 The Amazing History
           </h2>
           <div
             style={{
@@ -369,15 +682,19 @@ const Quiz = () => {
             {lesson.history()}
           </div>
         </div>
+
         <div className="card" style={{ marginBottom: "2rem" }}>
           <h2
             style={{
               fontSize: "1.5rem",
               fontWeight: "bold",
               marginBottom: "1rem",
+              display: "flex",
+              alignItems: "center",
+              gap: "0.5rem",
             }}
           >
-            What You'll Learn
+            🎯 What You'll Learn
           </h2>
           <p
             style={{
@@ -389,15 +706,19 @@ const Quiz = () => {
             {lesson.overview}
           </p>
         </div>
+
         <div className="card" style={{ marginBottom: "2rem" }}>
           <h2
             style={{
               fontSize: "1.5rem",
               fontWeight: "bold",
               marginBottom: "1rem",
+              display: "flex",
+              alignItems: "center",
+              gap: "0.5rem",
             }}
           >
-            Video Tutorial
+            🎥 Video Tutorial
           </h2>
           <div
             style={{ position: "relative", paddingBottom: "56.25%", height: 0 }}
@@ -419,12 +740,19 @@ const Quiz = () => {
             />
           </div>
         </div>
+
         <button
           onClick={() => setShowQuiz(true)}
           className="btn"
-          style={{ width: "100%", padding: "1rem", fontSize: "1.1rem" }}
+          style={{
+            width: "100%",
+            padding: "1rem",
+            fontSize: "1.1rem",
+            background: "linear-gradient(135deg, #207985, #1d4ed8)",
+            animation: "pulse 2s infinite",
+          }}
         >
-          Mark Done
+          🚀 Take the Quiz and Test Your Knowledge!
         </button>
       </div>
     );
