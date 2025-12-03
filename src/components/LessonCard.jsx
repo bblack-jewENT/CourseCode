@@ -79,7 +79,7 @@ const LessonCard = ({ lesson, courseId }) => {
           className="btn"
           style={{ background: "#125f42ff", fontSize: "0.95rem" }}
         >
-          Take Quiz
+          Start Lesson
         </Link>
       </div>
     </div>
