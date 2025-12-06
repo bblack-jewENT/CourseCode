@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import Contact from "./Contact";
+import churchStudents1 from "/src/img/church-students1.jpeg";
 
 const Home = () => {
   const aboutRef = useRef();
@@ -32,7 +33,7 @@ const Home = () => {
       {/* Hero Section */}
       <section
         style={{
-          backgroundImage: "url('public/church-students1.jpeg')",
+          backgroundImage: `url(${churchStudents1})`,
           color: "#fff",
           padding: "10rem 0",
           marginTop: "0.8rem",
