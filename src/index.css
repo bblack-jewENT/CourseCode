@@ -148,6 +148,11 @@
   }
 }
 
+.form-input {
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: system-ui, Arial, sans-serif;

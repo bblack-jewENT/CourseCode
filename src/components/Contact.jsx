@@ -79,7 +79,7 @@ const Contact = ({ onClose }) => {
             style={{
               fontSize: "1.875rem",
               fontWeight: "bold",
-              color: "#1f2937",
+              color: "#1a3c6bff",
               marginBottom: "0.5rem",
             }}
           >
@@ -114,9 +114,9 @@ const Contact = ({ onClose }) => {
                 type="text"
                 name="name"
                 value={formData.name}
+                className="form-input"
                 onChange={handleChange}
                 style={{
-                  width: "92%",
                   padding: "0.75rem 1rem",
                   border: "1px solid #d1d5db",
                   borderRadius: "0.5rem",
@@ -149,9 +149,9 @@ const Contact = ({ onClose }) => {
                 type="email"
                 name="email"
                 value={formData.email}
+                className="form-input"
                 onChange={handleChange}
                 style={{
-                  width: "92%",
                   padding: "0.75rem 1rem",
                   border: "1px solid #d1d5db",
                   borderRadius: "0.5rem",
@@ -183,9 +183,9 @@ const Contact = ({ onClose }) => {
               <textarea
                 name="message"
                 value={formData.message}
+                className="form-input"
                 onChange={handleChange}
                 style={{
-                  width: "92%",
                   padding: "0.75rem 1rem",
                   border: "1px solid #d1d5db",
                   borderRadius: "0.5rem",
@@ -207,6 +207,7 @@ const Contact = ({ onClose }) => {
             <button
               type="submit"
               disabled={loading}
+              className="contact-form-submit-btn"
               style={{
                 width: "100%",
                 background: "linear-gradient(to right, #207985, #0b1f4bdc)",
