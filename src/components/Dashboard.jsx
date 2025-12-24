@@ -89,11 +89,11 @@ const Dashboard = () => {
       </div>
 
       {/* Course Progress */}
-      <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+      <div className="dashboard-card-grid">
         {courses.map((course) => {
           const courseProgress = getCourseProgress(course.id);
           return (
-            <div key={course.id} className="card" style={{ minWidth: "250px" }}>
+            <div key={course.id} className="card">
               <h3
                 style={{
                   fontSize: "1.1rem",
@@ -158,7 +158,7 @@ const Dashboard = () => {
           >
             Certificates
           </h2>
-          <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+          <div className="dashboard-card-grid">
             {courses.map((course) => {
               const completed = isCourseCompleted(course.id);
               const certificateKey = `certificate-${course.title}`;
@@ -171,7 +171,7 @@ const Dashboard = () => {
                     border: "1px solid #ccc",
                     borderRadius: "8px",
                     padding: "1rem",
-                    minWidth: "200px",
+                    minWidth: "180px",
                     textAlign: "center",
                   }}
                 >
