@@ -127,9 +127,9 @@ const Auth = () => {
                 type="text"
                 name="username"
                 value={formData.username}
+                className="form-input"
                 onChange={handleChange}
                 style={{
-                  width: "92%",
                   padding: "0.75rem 1rem",
                   border: "1px solid #d1d5db",
                   borderRadius: "0.5rem",
@@ -163,9 +163,9 @@ const Auth = () => {
               type="email"
               name="email"
               value={formData.email}
+              className="form-input"
               onChange={handleChange}
               style={{
-                width: "92%",
                 padding: "0.75rem 1rem",
                 border: "1px solid #d1d5db",
                 borderRadius: "0.5rem",
@@ -197,9 +197,9 @@ const Auth = () => {
               type="password"
               name="password"
               value={formData.password}
+              className="form-input"
               onChange={handleChange}
               style={{
-                width: "92%",
                 padding: "0.75rem 1rem",
                 border: "1px solid #d1d5db",
                 borderRadius: "0.5rem",
