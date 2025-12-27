@@ -2498,7 +2498,7 @@ const Quiz = () => {
             animation: "pulse 2s infinite",
           }}
         >
-          🚀 Take the Quiz and Test Your Knowledge!
+          🚀 Take the Quiz!
         </button>
       </div>
     );
