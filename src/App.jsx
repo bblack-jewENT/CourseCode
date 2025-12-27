@@ -102,5 +102,6 @@ function App() {
     </PayPalScriptProvider>
   );
 }
+import "./lesson-responsive.css";
 
 export default App;
