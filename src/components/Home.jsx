@@ -90,11 +90,14 @@ const Home = () => {
               margin: "0 auto",
             }}
           >
-            CourseCode is your gateway to mastering web development. We offer
-            beginner-friendly courses in HTML, CSS, JavaScript, and React,
-            complete with interactive lessons, short videos and quizzes to track
-            your progress. Here at CourseCode we thrive at building a supportive
-            community of learners. Join us today and start your coding journey!
+            CourseCode is your gateway to mastering web development, backend
+            development, and UI/UX design. We offer beginner-friendly courses in
+            HTML, CSS, JavaScript, React, and more, including backend
+            technologies and design principles. Our platform features
+            interactive lessons, short videos, and quizzes to track your
+            progress. At CourseCode, we thrive on building a supportive
+            community of learners. Join us today and start your journey to
+            becoming a well rounded developer!
           </p>
         </div>
       </section>
