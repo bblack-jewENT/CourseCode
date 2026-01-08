@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <footer className="footer" style={{ background: "#000" }}>
       <div className="container">
-        <p>&copy; 2025 CourseCode | bblackjew ENTj. All rights reserved.</p>
+        <p>&copy; 2026 CourseCode | bblackjew ENTj. All rights reserved.</p>
         <div
           style={{
             display: "flex",
