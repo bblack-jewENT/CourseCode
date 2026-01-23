@@ -1601,6 +1601,248 @@ const Quiz = () => {
         "Learn prototyping methodologies and user testing techniques including wireframing, interactive prototyping, usability testing, A/B testing, and how to gather and act on user feedback effectively!",
       videoId: "PZ2hchA4Jvg",
     },
+    25: {
+      title: "Introduction to Python",
+      history: () => (
+        <div className="lesson-history">
+          <div className="timeline-item animate-on-scroll">
+            <h3>🐍 Python's Birth (1989)</h3>
+            <p>
+              Guido van Rossum created Python at CWI in Amsterdam as a hobby
+              project during Christmas week. He wanted a language that was easy
+              to read and powerful, inspired by ABC but with better exception
+              handling. The name "Python" came from his love of the British
+              comedy series Monty Python!
+            </p>
+          </div>
+          <div className="timeline-item animate-on-scroll">
+            <h3>📈 Rise to Popularity (2000s-2010s)</h3>
+            <p>
+              Python gained massive popularity due to its clean syntax, powerful
+              libraries, and versatility. It became the go-to language for web
+              development (Django, Flask), data science (NumPy, Pandas), machine
+              learning (TensorFlow, PyTorch), and automation.
+            </p>
+          </div>
+          <div className="timeline-item animate-on-scroll">
+            <h3>🚀 The Data Science Era (2010s-Present)</h3>
+            <p>
+              Python became the undisputed leader in data science and AI.
+              Companies like Google, Netflix, and Spotify use Python for machine
+              learning and data analysis. Today, Python is one of the most
+              sought-after programming skills in the industry!
+            </p>
+          </div>
+        </div>
+      ),
+      overview:
+        "Python is a versatile, beginner-friendly programming language known for its clean syntax and powerful libraries. Learn why Python is one of the most popular languages for web development, data science, and automation!",
+      videoId: "kqtZrmDTrIk",
+    },
+    26: {
+      title: "Variables and Data Types",
+      history: () => (
+        <div className="lesson-history">
+          <div className="timeline-item animate-on-scroll">
+            <h3>📦 Understanding Variables</h3>
+            <p>
+              Variables are containers for storing data values. In Python, you
+              don't need to declare the variable type - Python infers it
+              automatically! This makes Python incredibly beginner-friendly
+              compared to languages like Java or C++.
+            </p>
+          </div>
+          <div className="timeline-item animate-on-scroll">
+            <h3>🔤 Data Types in Python</h3>
+            <p>
+              Python has several built-in data types: strings (text), integers
+              (whole numbers), floats (decimal numbers), booleans (True/False),
+              and complex collections like lists, tuples, dictionaries, and
+              sets. Understanding these types is crucial for writing effective
+              Python code!
+            </p>
+          </div>
+        </div>
+      ),
+      overview:
+        "Understand Python variables, data types (strings, integers, floats, booleans), and type casting. Learn how to work with different data types and convert between them!",
+      videoId: "nLRL_NcnK-4",
+    },
+    27: {
+      title: "Operators and Control Flow",
+      history: () => (
+        <div className="lesson-history">
+          <div className="timeline-item animate-on-scroll">
+            <h3>⚡ Operators</h3>
+            <p>
+              Python supports various operators: arithmetic (+, -, *, /),
+              comparison (==, !=, &lt;, &gt;), logical (and, or, not), and
+              assignment (=, +=, -=). These operators allow you to perform
+              calculations, make comparisons, and assign values to variables.
+            </p>
+          </div>
+          <div className="timeline-item animate-on-scroll">
+            <h3>🔀 Control Flow Statements</h3>
+            <p>
+              If, elif, and else statements allow your program to make
+              decisions. Using these, you can create branching logic that
+              executes different code based on different conditions - this is
+              fundamental to programming!
+            </p>
+          </div>
+        </div>
+      ),
+      overview:
+        "Master arithmetic, comparison, logical, and assignment operators. Learn conditional statements (if, elif, else) and how to control program flow!",
+      videoId: "HKWXvX9yGSo",
+    },
+    28: {
+      title: "Loops and Iterations",
+      history: () => (
+        <div className="lesson-history">
+          <div className="timeline-item animate-on-scroll">
+            <h3>🔄 For Loops</h3>
+            <p>
+              For loops allow you to iterate over sequences like lists, strings,
+              and ranges. They are perfect when you know exactly how many times
+              you want to execute a block of code. For loops are one of the most
+              commonly used constructs in programming!
+            </p>
+          </div>
+          <div className="timeline-item animate-on-scroll">
+            <h3>⏳ While Loops</h3>
+            <p>
+              While loops execute as long as a condition is true. They are
+              useful when you do not know how many iterations you will need.
+              Always include a condition that will eventually become false to
+              avoid infinite loops!
+            </p>
+          </div>
+          <div className="timeline-item animate-on-scroll">
+            <h3>✨ Loop Control</h3>
+            <p>
+              Break and continue statements give you fine control over loops.
+              Break exits the loop immediately, while continue skips to the next
+              iteration. These are essential for writing efficient loops!
+            </p>
+          </div>
+        </div>
+      ),
+      overview:
+        "Learn for and while loops, loop control statements (break, continue), and how to iterate over sequences. Practice nested loops and comprehensions!",
+      videoId: "94SYV86R5OI",
+    },
+    29: {
+      title: "Functions and Modules",
+      history: () => (
+        <div className="lesson-history">
+          <div className="timeline-item animate-on-scroll">
+            <h3>🎯 What are Functions?</h3>
+            <p>
+              Functions are reusable blocks of code that perform specific tasks.
+              They help you organize your code, reduce repetition, and make your
+              programs more maintainable. Write once, use many times!
+            </p>
+          </div>
+          <div className="timeline-item animate-on-scroll">
+            <h3>📚 Modules and Packages</h3>
+            <p>
+              Modules are files containing Python code that you can import and
+              use. Packages are directories of modules. Python has a rich
+              ecosystem of modules (the standard library and third-party
+              packages) and is one of its greatest strengths!
+            </p>
+          </div>
+        </div>
+      ),
+      overview:
+        "Create reusable functions with parameters and return values. Understand scope, lambda functions, and how to organize code using modules and packages!",
+      videoId: "9Os6O8agcqU",
+    },
+    30: {
+      title: "Lists, Tuples, and Dictionaries",
+      history: () => (
+        <div className="lesson-history">
+          <div className="timeline-item animate-on-scroll">
+            <h3>📝 Lists and Tuples</h3>
+            <p>
+              Lists and tuples are sequences that store multiple values. Lists
+              are mutable (changeable), while tuples are immutable (fixed). Both
+              are essential data structures in Python for organizing data
+              efficiently!
+            </p>
+          </div>
+          <div className="timeline-item animate-on-scroll">
+            <h3>🗝️ Dictionaries</h3>
+            <p>
+              Dictionaries store key-value pairs, like a real dictionary mapping
+              words to definitions. They are incredibly useful for organizing
+              and accessing related data. Unlike lists, dictionaries are
+              accessed by keys rather than indices!
+            </p>
+          </div>
+        </div>
+      ),
+      overview:
+        "Work with Python collections including lists, tuples, sets, and dictionaries. Learn slicing, unpacking, and common collection methods!",
+      videoId: "DfSShOtL4KE",
+    },
+    31: {
+      title: "String Manipulation",
+      history: () => (
+        <div className="lesson-history">
+          <div className="timeline-item animate-on-scroll">
+            <h3>🔤 String Operations</h3>
+            <p>
+              Strings are sequences of characters. Python provides powerful
+              string methods for manipulation: concatenation, slicing,
+              formatting, and case conversion. String manipulation is essential
+              for working with text data in any application!
+            </p>
+          </div>
+          <div className="timeline-item animate-on-scroll">
+            <h3>🔍 Regular Expressions</h3>
+            <p>
+              Regular expressions (regex) are patterns used to match, find, and
+              replace text. They are incredibly powerful for pattern matching
+              and data validation. Regex is a skill that transfers across many
+              programming languages!
+            </p>
+          </div>
+        </div>
+      ),
+      overview:
+        "Master string operations including concatenation, formatting, methods, and regular expressions for pattern matching!",
+      videoId: "7aAmbWCKeV4",
+    },
+    32: {
+      title: "File I/O and Error Handling",
+      history: () => (
+        <div className="lesson-history">
+          <div className="timeline-item animate-on-scroll">
+            <h3>📂 File Input/Output</h3>
+            <p>
+              File I/O allows your program to read from and write to files. This
+              is essential for working with data persistence - saving data that
+              persists even after your program ends. Python makes file
+              operations simple and intuitive!
+            </p>
+          </div>
+          <div className="timeline-item animate-on-scroll">
+            <h3>⚠️ Error Handling</h3>
+            <p>
+              Errors happen in every program. Rather than crashing, well-written
+              programs handle errors gracefully using try-except blocks. This is
+              a sign of professional, production-ready code that users can
+              trust!
+            </p>
+          </div>
+        </div>
+      ),
+      overview:
+        "Learn reading and writing files in different modes. Understand exception handling with try-except blocks and custom exceptions!",
+      videoId: "uOLW2NJsPGY",
+    },
   };
 
   // Mock quiz data - in a real app, this would come from an API
@@ -2629,6 +2871,365 @@ const Quiz = () => {
         correct: 1,
       },
     ],
+    25: [
+      // Introduction to Python
+      {
+        question: "Who created Python?",
+        options: [
+          "Guido van Rossum",
+          "Linus Torvalds",
+          "Tim Berners-Lee",
+          "Dennis Ritchie",
+        ],
+        correct: 0,
+      },
+      {
+        question: "What year was Python created?",
+        options: ["1985", "1989", "1995", "2000"],
+        correct: 1,
+      },
+      {
+        question: "Why is Python called 'Python'?",
+        options: [
+          "Because of the snake shape of the code",
+          "After the Monty Python comedy series",
+          "It's an acronym for a programming concept",
+          "It was named after a famous programmer",
+        ],
+        correct: 1,
+      },
+      {
+        question: "What is Python known for?",
+        options: [
+          "Being extremely fast",
+          "Clean syntax and readability",
+          "Complex syntax for experts only",
+          "Being limited to web development",
+        ],
+        correct: 1,
+      },
+      {
+        question: "Which field uses Python most extensively today?",
+        options: [
+          "Mobile app development",
+          "Game development",
+          "Data science and machine learning",
+          "Desktop applications",
+        ],
+        correct: 2,
+      },
+    ],
+    26: [
+      // Variables and Data Types
+      {
+        question: "What is a variable in Python?",
+        options: [
+          "A function that changes",
+          "A container for storing data values",
+          "A type of loop",
+          "A keyword in Python",
+        ],
+        correct: 1,
+      },
+      {
+        question: "Which of these is a valid Python variable name?",
+        options: ["2myvar", "my-var", "my_var", "my var"],
+        correct: 2,
+      },
+      {
+        question: "What data type is 3.14?",
+        options: ["String", "Integer", "Float", "Boolean"],
+        correct: 2,
+      },
+      {
+        question: "What does the type() function do?",
+        options: [
+          "Converts a value to a different type",
+          "Returns the data type of a value",
+          "Declares a variable type",
+          "Creates a new data type",
+        ],
+        correct: 1,
+      },
+      {
+        question: "How do you convert a string '123' to an integer?",
+        options: [
+          "toInt('123')",
+          "int('123')",
+          "convert('123')",
+          "integer('123')",
+        ],
+        correct: 1,
+      },
+    ],
+    27: [
+      // Operators and Control Flow
+      {
+        question: "What is the result of 10 + 5 * 2?",
+        options: ["30", "20", "15", "25"],
+        correct: 1,
+      },
+      {
+        question: "Which operator checks if two values are equal?",
+        options: ["=", "==", "===", "!="],
+        correct: 1,
+      },
+      {
+        question: "What does the 'and' operator do?",
+        options: [
+          "Returns true if one condition is true",
+          "Returns true only if both conditions are true",
+          "Adds two numbers",
+          "Joins two strings",
+        ],
+        correct: 1,
+      },
+      {
+        question: "If x = 5, what is the value of x += 3?",
+        options: ["5", "3", "8", "53"],
+        correct: 2,
+      },
+      {
+        question: "What does the 'if' statement do?",
+        options: [
+          "Repeats code",
+          "Executes code only if a condition is true",
+          "Defines a function",
+          "Creates a list",
+        ],
+        correct: 1,
+      },
+    ],
+    28: [
+      // Loops and Iterations
+      {
+        question: "What does a 'for' loop do?",
+        options: [
+          "Repeats code while a condition is true",
+          "Repeats code for a fixed number of times",
+          "Declares a function",
+          "Creates a variable",
+        ],
+        correct: 1,
+      },
+      {
+        question: "What will this code print? for i in range(3): print(i)",
+        options: ["0 1 2 3", "1 2 3", "0 1 2", "3 2 1"],
+        correct: 2,
+      },
+      {
+        question: "What is the 'break' statement used for?",
+        options: [
+          "Starts a new loop",
+          "Exits a loop immediately",
+          "Skips to the next iteration",
+          "Breaks the program",
+        ],
+        correct: 1,
+      },
+      {
+        question: "What does 'continue' do in a loop?",
+        options: [
+          "Exits the loop",
+          "Skips to the next iteration",
+          "Starts a new loop",
+          "Pauses the loop",
+        ],
+        correct: 1,
+      },
+      {
+        question: "What is a 'while' loop?",
+        options: [
+          "A loop that runs a fixed number of times",
+          "A loop that runs as long as a condition is true",
+          "A type of function",
+          "A comparison operator",
+        ],
+        correct: 1,
+      },
+    ],
+    29: [
+      // Functions and Modules
+      {
+        question: "What is a function?",
+        options: [
+          "A variable that stores data",
+          "A reusable block of code that performs a task",
+          "A type of loop",
+          "A data structure",
+        ],
+        correct: 1,
+      },
+      {
+        question: "How do you define a function in Python?",
+        options: [
+          "function myFunc() {}",
+          "def myFunc():",
+          "define myFunc:",
+          "func myFunc():",
+        ],
+        correct: 1,
+      },
+      {
+        question: "What is a parameter in a function?",
+        options: [
+          "The output of a function",
+          "A variable that receives a value when the function is called",
+          "A loop inside a function",
+          "The name of the function",
+        ],
+        correct: 1,
+      },
+      {
+        question: "What is a module?",
+        options: [
+          "A loop structure",
+          "A file containing Python code that can be imported",
+          "A type of variable",
+          "A comparison operator",
+        ],
+        correct: 1,
+      },
+      {
+        question: "How do you import a module?",
+        options: ["include math", "import math", "load math", "use math"],
+        correct: 1,
+      },
+    ],
+    30: [
+      // Lists, Tuples, and Dictionaries
+      {
+        question: "What is a list in Python?",
+        options: [
+          "An immutable sequence",
+          "A mutable sequence of items",
+          "A type of function",
+          "A comparison operator",
+        ],
+        correct: 1,
+      },
+      {
+        question: "How do you access the first item in a list?",
+        options: ["list[1]", "list[0]", "list.first()", "list(1)"],
+        correct: 1,
+      },
+      {
+        question: "What is the main difference between a list and a tuple?",
+        options: [
+          "Lists are immutable, tuples are mutable",
+          "Lists are mutable, tuples are immutable",
+          "Tuples are faster than lists",
+          "Lists can only contain numbers",
+        ],
+        correct: 1,
+      },
+      {
+        question: "What is a dictionary?",
+        options: [
+          "A list of words",
+          "A data structure that stores key-value pairs",
+          "A type of string",
+          "A function definition",
+        ],
+        correct: 1,
+      },
+      {
+        question: "How do you access a value in a dictionary?",
+        options: ["dict[0]", "dict.key", "dict['key']", "dict.get(key)"],
+        correct: 2,
+      },
+    ],
+    31: [
+      // String Manipulation
+      {
+        question: "How do you concatenate two strings?",
+        options: ["str1 & str2", "str1 + str2", "str1 . str2", "str1 | str2"],
+        correct: 1,
+      },
+      {
+        question: "What does the len() function do?",
+        options: [
+          "Converts to lowercase",
+          "Returns the length of a string",
+          "Finds a substring",
+          "Splits a string",
+        ],
+        correct: 1,
+      },
+      {
+        question: "What method converts a string to uppercase?",
+        options: ["toUpper()", "upper()", "UP()", "uppercase()"],
+        correct: 1,
+      },
+      {
+        question: "What does the replace() method do?",
+        options: [
+          "Finds a string",
+          "Replaces one substring with another",
+          "Deletes a substring",
+          "Splits a string",
+        ],
+        correct: 1,
+      },
+      {
+        question: "What are regular expressions used for?",
+        options: [
+          "Creating lists",
+          "Pattern matching and text processing",
+          "Mathematical calculations",
+          "Function definition",
+        ],
+        correct: 1,
+      },
+    ],
+    32: [
+      // File I/O and Error Handling
+      {
+        question: "How do you open a file for reading in Python?",
+        options: [
+          "open('file.txt', 'r')",
+          "read('file.txt')",
+          "open('file.txt', 'read')",
+          "load('file.txt')",
+        ],
+        correct: 0,
+      },
+      {
+        question: "What mode do you use to write to a file?",
+        options: ["'r'", "'w'", "'a'", "'x'"],
+        correct: 1,
+      },
+      {
+        question: "What does 'a' mode do when opening a file?",
+        options: [
+          "Reads the file",
+          "Writes to the file (overwrites)",
+          "Appends to the file",
+          "Creates a copy of the file",
+        ],
+        correct: 2,
+      },
+      {
+        question: "What is a 'try-except' block used for?",
+        options: [
+          "Creating a loop",
+          "Defining a function",
+          "Handling errors gracefully",
+          "Declaring variables",
+        ],
+        correct: 2,
+      },
+      {
+        question: "What happens if an error is caught by 'except'?",
+        options: [
+          "The program crashes",
+          "The except block is executed",
+          "The error is ignored",
+          "The program restarts",
+        ],
+        correct: 1,
+      },
+    ],
   };
 
   useEffect(() => {
@@ -2659,7 +3260,7 @@ const Quiz = () => {
     } else {
       // Save progress to localStorage
       const progress = JSON.parse(
-        localStorage.getItem("codelearn-progress") || "{}"
+        localStorage.getItem("codelearn-progress") || "{}",
       );
       progress[`quiz-${courseId}-${lessonId}`] = {
         score:
@@ -2698,7 +3299,7 @@ const Quiz = () => {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     const animatedElements = document.querySelectorAll(".animate-on-scroll");
@@ -2708,7 +3309,7 @@ const Quiz = () => {
   }, [showQuiz]);
 
   if (!showQuiz) {
-    const lesson = lessonData[courseId];
+    const lesson = lessonData[lessonId];
     if (!lesson) {
       return <div className="container">Loading lesson...</div>;
     }
@@ -2879,8 +3480,8 @@ const Quiz = () => {
             {score === questions.length
               ? "Perfect! 🎉"
               : score > questions.length / 2
-              ? "Great job! 👍"
-              : "Keep practicing! 💪"}
+                ? "Great job! 👍"
+                : "Keep practicing! 💪"}
           </p>
           <div
             style={{
