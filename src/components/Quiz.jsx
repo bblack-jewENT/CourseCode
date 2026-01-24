@@ -3310,8 +3310,162 @@ const Quiz = () => {
 
   if (!showQuiz) {
     const lesson = lessonData[lessonId];
+
+    // Handle missing lessons - check if this is a premium course
     if (!lesson) {
-      return <div className="container">Loading lesson...</div>;
+      const premiumCourseIds = [9, 11, 12, 13, 16]; // Premium courses
+      const isPremiumCourse = premiumCourseIds.includes(parseInt(courseId));
+
+      if (isPremiumCourse && subscription !== "premium") {
+        return (
+          <div
+            className="container"
+            style={{
+              maxWidth: "600px",
+              marginTop: "3rem",
+              textAlign: "center",
+            }}
+          >
+            <div
+              style={{
+                background: "linear-gradient(135deg, #fbbf24, #f97316)",
+                borderRadius: "16px",
+                padding: "2rem",
+                color: "white",
+                boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
+              }}
+            >
+              <h2
+                style={{
+                  fontSize: "1.8rem",
+                  fontWeight: "bold",
+                  marginBottom: "1rem",
+                }}
+              >
+                🔒 Premium Content
+              </h2>
+              <p
+                style={{
+                  fontSize: "1rem",
+                  marginBottom: "1.5rem",
+                  lineHeight: "1.6",
+                }}
+              >
+                This lesson is exclusively available for premium subscribers.
+                Upgrade your account to unlock this powerful course content and
+                access all premium features.
+              </p>
+              <div
+                style={{
+                  background: "rgba(255,255,255,0.15)",
+                  padding: "1.5rem",
+                  borderRadius: "12px",
+                  marginBottom: "1.5rem",
+                }}
+              >
+                <h3 style={{ marginTop: 0, marginBottom: "0.5rem" }}>
+                  Premium Benefits:
+                </h3>
+                <ul
+                  style={{
+                    textAlign: "left",
+                    display: "inline-block",
+                    margin: 0,
+                    paddingLeft: "1.5rem",
+                  }}
+                >
+                  <li>✅ Access to all premium courses</li>
+                  <li>✅ Unlimited lesson access</li>
+                  <li>✅ Certificate of completion</li>
+                  <li>✅ Priority support</li>
+                </ul>
+              </div>
+              <a
+                href="/pricing"
+                className="btn"
+                style={{
+                  display: "inline-block",
+                  background: "white",
+                  color: "#f97316",
+                  padding: "0.75rem 2rem",
+                  borderRadius: "8px",
+                  textDecoration: "none",
+                  fontWeight: "bold",
+                  marginRight: "1rem",
+                }}
+              >
+                Upgrade to Premium
+              </a>
+              <button
+                onClick={() => navigate("/courses")}
+                style={{
+                  background: "rgba(255,255,255,0.2)",
+                  color: "white",
+                  padding: "0.75rem 2rem",
+                  borderRadius: "8px",
+                  border: "2px solid white",
+                  fontWeight: "bold",
+                  cursor: "pointer",
+                }}
+              >
+                Back to Courses
+              </button>
+            </div>
+          </div>
+        );
+      }
+
+      return (
+        <div
+          className="container"
+          style={{ maxWidth: "600px", marginTop: "3rem", textAlign: "center" }}
+        >
+          <div
+            style={{
+              background: "linear-gradient(135deg, #ef4444, #dc2626)",
+              borderRadius: "16px",
+              padding: "2rem",
+              color: "white",
+              boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
+            }}
+          >
+            <h2
+              style={{
+                fontSize: "1.8rem",
+                fontWeight: "bold",
+                marginBottom: "1rem",
+              }}
+            >
+              ⚠️ Lesson Not Found
+            </h2>
+            <p
+              style={{
+                fontSize: "1rem",
+                marginBottom: "1.5rem",
+                lineHeight: "1.6",
+              }}
+            >
+              We couldn't load this lesson. The lesson content may not be
+              available yet or there might be a technical issue.
+            </p>
+            <button
+              onClick={() => navigate("/courses")}
+              className="btn"
+              style={{
+                background: "white",
+                color: "#dc2626",
+                padding: "0.75rem 2rem",
+                borderRadius: "8px",
+                border: "none",
+                fontWeight: "bold",
+                cursor: "pointer",
+              }}
+            >
+              Back to Courses
+            </button>
+          </div>
+        </div>
+      );
     }
     return (
       <div className="container" style={{ maxWidth: "800px" }}>
