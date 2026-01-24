@@ -232,10 +232,10 @@ const Courses = () => {
       id: 9,
       title: "Database Design & Management",
       description: "Master SQL, NoSQL, and database architecture",
-      isPremium: false,
+      isPremium: true,
       lessons: [
         {
-          id: 17,
+          id: 9,
           title: "Database Design & Management",
           content:
             "Master database fundamentals including relational design, SQL, NoSQL databases.",
@@ -258,7 +258,7 @@ const Courses = () => {
       isPremium: false,
       lessons: [
         {
-          id: 18,
+          id: 10,
           title: "Web Security & Best Practices",
           content:
             "Master web security fundamentals including authentication, authorization, data protection.",
@@ -277,10 +277,10 @@ const Courses = () => {
       id: 11,
       title: "Node.js & Express Fundamentals",
       description: "Master Node.js runtime and Express.js framework",
-      isPremium: false,
+      isPremium: true,
       lessons: [
         {
-          id: 19,
+          id: 11,
           title: "Node.js & Express Fundamentals",
           content:
             "Learn Node.js fundamentals including the event loop, npm ecosystem, Express.js framework.",
@@ -299,10 +299,10 @@ const Courses = () => {
       id: 12,
       title: "Database Integration & ORM",
       description: "Connect applications to databases with ORM frameworks",
-      isPremium: false,
+      isPremium: true,
       lessons: [
         {
-          id: 20,
+          id: 12,
           title: "Database Integration & ORM",
           content:
             "Master database integration with Node.js including SQL vs NoSQL databases, ORM frameworks.",
@@ -321,10 +321,10 @@ const Courses = () => {
       id: 13,
       title: "API Design & Architecture",
       description: "Design scalable and maintainable APIs",
-      isPremium: false,
+      isPremium: true,
       lessons: [
         {
-          id: 21,
+          id: 13,
           title: "API Design & Architecture",
           content:
             "Design and build RESTful APIs with proper HTTP methods, status codes, error handling.",
@@ -346,7 +346,7 @@ const Courses = () => {
       isPremium: false,
       lessons: [
         {
-          id: 22,
+          id: 14,
           title: "User Experience Fundamentals",
           content:
             "Learn user experience fundamentals including user research, information architecture.",
@@ -368,7 +368,7 @@ const Courses = () => {
       isPremium: false,
       lessons: [
         {
-          id: 23,
+          id: 15,
           title: "Visual Design & Branding",
           content:
             "Master visual design principles including color theory, typography, layout, branding.",
@@ -387,10 +387,10 @@ const Courses = () => {
       id: 16,
       title: "Prototyping & User Testing",
       description: "Build prototypes and conduct user testing studies",
-      isPremium: false,
+      isPremium: true,
       lessons: [
         {
-          id: 24,
+          id: 16,
           title: "Prototyping & User Testing",
           content:
             "Learn prototyping methodologies and user testing techniques including wireframing, interactive prototyping.",
