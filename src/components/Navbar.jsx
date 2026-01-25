@@ -105,21 +105,9 @@ const Navbar = () => {
             <div className="navbar-user">
               <Link to="/settings" onClick={() => setIsMenuOpen(false)}>
                 <div className="avatar">
-                  {currentUser.displayName
-                    ? currentUser.displayName.charAt(0).toUpperCase()
-                    : currentUser.email.charAt(0).toUpperCase()}
+                  {(currentUser.displayName || currentUser.email).substring(0, 2).toUpperCase()}
                 </div>
               </Link>
-              <button
-                onClick={() => {
-                  handleLogout();
-                  setIsMenuOpen(false);
-                }}
-                style={{ margingRight: "1.5rem" }}
-                className="btn"
-              >
-                Log Out
-              </button>
             </div>
           )}
         </div>
