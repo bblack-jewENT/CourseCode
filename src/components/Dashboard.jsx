@@ -10,7 +10,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     const savedProgress = JSON.parse(
-      localStorage.getItem("codelearn-progress") || "{}"
+      localStorage.getItem("codelearn-progress") || "{}",
     );
     setProgress(savedProgress);
   }, []);
@@ -37,9 +37,9 @@ const Dashboard = () => {
   const getCourseProgress = (courseId) => {
     const courseLessons = courses.find((c) => c.id === courseId)?.lessons || 0;
     const completedQuizzes = Object.keys(progress).filter((key) =>
-      key.startsWith(`quiz-${courseId}-`)
+      key.startsWith(`quiz-${courseId}-`),
     ).length;
-    return Math.round((completedQuizzes / courseLessons) * 100);
+    return Math.min(Math.round((completedQuizzes / courseLessons) * 100), 100); // Cap at 100%
   };
 
   const isCourseCompleted = (courseId) => {
@@ -54,7 +54,7 @@ const Dashboard = () => {
     };
     localStorage.setItem(
       `certificate-${courseTitle}`,
-      JSON.stringify(certificateData)
+      JSON.stringify(certificateData),
     );
     alert(`Certificate generated for ${courseTitle}!`);
   };
@@ -205,7 +205,7 @@ const Dashboard = () => {
                           onClick={() => {
                             const cert = JSON.parse(hasCertificate);
                             alert(
-                              `Certificate for ${cert.course}\nCompleted on: ${cert.date}`
+                              `Certificate for ${cert.course}\nCompleted on: ${cert.date}`,
                             );
                           }}
                         >
