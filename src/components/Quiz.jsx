@@ -3233,10 +3233,12 @@ const Quiz = () => {
   };
 
   useEffect(() => {
-    const courseQuestions = quizData[courseId] || [];
+    // Try to load quiz data by courseId first, then by lessonId
+    const courseQuestions =
+      quizData[courseId] || quizData[parseInt(lessonId)] || [];
     setQuestions(courseQuestions);
     setAnswers(new Array(courseQuestions.length).fill(null));
-  }, [courseId]);
+  }, [courseId, lessonId]);
 
   // Show lesson first, then quiz after button click
   const [showQuiz, setShowQuiz] = useState(false);
@@ -3262,10 +3264,10 @@ const Quiz = () => {
       const progress = JSON.parse(
         localStorage.getItem("codelearn-progress") || "{}",
       );
+      const newScore =
+        score + (selectedAnswer === questions[currentQuestion].correct ? 1 : 0);
       progress[`quiz-${courseId}-${lessonId}`] = {
-        score:
-          score +
-          (selectedAnswer === questions[currentQuestion].correct ? 1 : 0),
+        score: Math.min(newScore, questions.length), // Cap score at 100% (total questions)
         total: questions.length,
       };
       localStorage.setItem("codelearn-progress", JSON.stringify(progress));
@@ -3309,7 +3311,7 @@ const Quiz = () => {
   }, [showQuiz]);
 
   if (!showQuiz) {
-    const lesson = lessonData[lessonId];
+    const lesson = lessonData[parseInt(lessonId)];
 
     // Handle missing lessons - check if this is a premium course
     if (!lesson) {
@@ -3570,25 +3572,43 @@ const Quiz = () => {
           >
             🎥 Video Tutorial
           </h2>
-          <div
-            style={{ position: "relative", paddingBottom: "56.25%", height: 0 }}
-          >
-            <iframe
-              src={`https://www.youtube.com/embed/${lesson.videoId}`}
+          {lesson.videoId ? (
+            <div
               style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%",
-                borderRadius: "8px",
+                position: "relative",
+                paddingBottom: "56.25%",
+                height: 0,
               }}
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              title="Tutorial Video"
-            />
-          </div>
+            >
+              <iframe
+                src={`https://www.youtube.com/embed/${lesson.videoId}?modestbranding=1&rel=0`}
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  borderRadius: "8px",
+                }}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                title="Tutorial Video"
+              />
+            </div>
+          ) : (
+            <div
+              style={{
+                background: "#f0f0f0",
+                padding: "2rem",
+                borderRadius: "8px",
+                textAlign: "center",
+                color: "#666",
+              }}
+            >
+              <p>Video coming soon for this lesson.</p>
+            </div>
+          )}
         </div>
 
         <button
