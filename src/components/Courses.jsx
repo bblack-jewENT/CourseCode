@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { getPersistedItem, setPersistedItem } from "../services/persist";
 import LessonCard from "./LessonCard";
 
 const Courses = () => {
+  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
   const [subscription, setSubscription] = useState("free");
 
@@ -753,9 +755,12 @@ const Courses = () => {
                         <p style={{ color: "#666", marginBottom: "1rem" }}>
                           This course requires a premium subscription
                         </p>
-                        <a href="/pricing" className="btn">
+                        <button
+                          className="btn"
+                          onClick={() => navigate("/pricing")}
+                        >
                           Upgrade to Premium
-                        </a>
+                        </button>
                       </div>
                     ) : (
                       <div>
