@@ -1637,7 +1637,7 @@ const Quiz = () => {
       ),
       overview:
         "Python is a versatile, beginner-friendly programming language known for its clean syntax and powerful libraries. Learn why Python is one of the most popular languages for web development, data science, and automation!",
-      videoId: "kqtZrmDTrIk",
+      videoId: "kqtD5dpn9C8",
     },
     26: {
       title: "Variables and Data Types",
@@ -1694,7 +1694,7 @@ const Quiz = () => {
       ),
       overview:
         "Master arithmetic, comparison, logical, and assignment operators. Learn conditional statements (if, elif, else) and how to control program flow!",
-      videoId: "HKWXvX9yGSo",
+      videoId: "Zp5MuPOtsSY",
     },
     28: {
       title: "Loops and Iterations",
@@ -1730,7 +1730,7 @@ const Quiz = () => {
       ),
       overview:
         "Learn for and while loops, loop control statements (break, continue), and how to iterate over sequences. Practice nested loops and comprehensions!",
-      videoId: "94SYV86R5OI",
+      videoId: "6iF8Xb7Z3wQ",
     },
     29: {
       title: "Functions and Modules",
@@ -1757,7 +1757,7 @@ const Quiz = () => {
       ),
       overview:
         "Create reusable functions with parameters and return values. Understand scope, lambda functions, and how to organize code using modules and packages!",
-      videoId: "9Os6O8agcqU",
+      videoId: "qbWBhyGmCs0",
     },
     30: {
       title: "Lists, Tuples, and Dictionaries",
@@ -1785,7 +1785,7 @@ const Quiz = () => {
       ),
       overview:
         "Work with Python collections including lists, tuples, sets, and dictionaries. Learn slicing, unpacking, and common collection methods!",
-      videoId: "DfSShOtL4KE",
+      videoId: "R-HLU9Fl5ug",
     },
     31: {
       title: "String Manipulation",
@@ -1813,7 +1813,7 @@ const Quiz = () => {
       ),
       overview:
         "Master string operations including concatenation, formatting, methods, and regular expressions for pattern matching!",
-      videoId: "7aAmbWCKeV4",
+      videoId: "tb6EYiHtcXU",
     },
     32: {
       title: "File I/O and Error Handling",
@@ -1841,7 +1841,7 @@ const Quiz = () => {
       ),
       overview:
         "Learn reading and writing files in different modes. Understand exception handling with try-except blocks and custom exceptions!",
-      videoId: "uOLW2NJsPGY",
+      videoId: "6Sx-g5uiyqw",
     },
   };
 
