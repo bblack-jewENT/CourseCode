@@ -21,7 +21,7 @@ const Home = () => {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (aboutRef.current) observer.observe(aboutRef.current);
@@ -35,16 +35,30 @@ const Home = () => {
       {/* Hero Section */}
       <section
         style={{
-          backgroundImage: `url(${churchStudents1})`,
+          position: "relative",
           color: "#fff",
           padding: "10rem 0",
           marginTop: "0.8rem",
           marginRight: "0.5px",
           marginLeft: "-8px",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
         }}
       >
+        <img
+          src={churchStudents1}
+          alt="Students learning together"
+          loading="eager"
+          fetchPriority="high"
+          width={1600}
+          height={800}
+          style={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            zIndex: -1,
+          }}
+        />
         <div className="container" style={{ textAlign: "center" }}>
           <h1
             style={{
