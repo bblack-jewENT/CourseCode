@@ -6,6 +6,7 @@ import { AuthProvider } from "./contexts/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import AIChat from "./components/AIChat";
 import Home from "./components/Home";
 import Courses from "./components/Courses";
 import Quiz from "./components/Quiz";
@@ -96,6 +97,7 @@ function App() {
                 </Routes>
               </main>
               <Footer />
+              <AIChat />
             </div>
           </ErrorBoundary>
         </Router>
