@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import Contact from "./Contact";
+import { Analytics } from "@vercel/analytics/next";
 import churchStudents1 from "/src/img/church-students1.jpeg";
 
 const Home = () => {
@@ -265,6 +266,7 @@ const Home = () => {
       {showContactModal && (
         <Contact onClose={() => setShowContactModal(false)} />
       )}
+      <Analytics />
     </div>
   );
 };
